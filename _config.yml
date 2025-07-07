@@ -4,6 +4,9 @@ description: "Guided camper adventures through Bulgaria - Expert-led journeys fo
 baseurl: "/trips.thestable.bg"
 url: "https://yourusername.github.io"
 
+# Analytics
+google_analytics: G-4ZJF48SWW2
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
