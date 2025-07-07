@@ -1,0 +1,47 @@
+# Site settings
+title: "The Stable - Camper Adventures"
+description: "Guided camper adventures through Bulgaria - Expert-led journeys for groups of up to 10"
+baseurl: "/trips.thestable.bg"
+url: "https://yourusername.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  trips:
+    output: true
+    permalink: /trips/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "trips"
+    values:
+      layout: "trip"
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - src/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

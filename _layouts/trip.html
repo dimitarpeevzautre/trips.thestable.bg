@@ -1,0 +1,151 @@
+---
+layout: default
+---
+
+<div class="container-custom py-8">
+    <article class="max-w-6xl mx-auto">
+        <!-- Journey Header -->
+        <header class="mb-8">
+            {% if page.featured_image %}
+                <div class="w-full h-96 bg-gray-300 rounded-xl overflow-hidden mb-6">
+                    <img src="{{ page.featured_image | relative_url }}" 
+                         alt="{{ page.title }}" 
+                         class="w-full h-full object-cover">
+                </div>
+            {% endif %}
+            
+            <div class="flex flex-wrap items-center gap-4 mb-4">
+                {% if page.emoji %}
+                    <span class="text-3xl">{{ page.emoji }}</span>
+                {% endif %}
+                {% if page.dates %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
+                        � {{ page.dates }}
+                    </span>
+                {% endif %}
+                {% if page.duration %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-secondary-100 text-secondary-800">
+                        ⏱️ {{ page.duration }}
+                    </span>
+                {% endif %}
+                {% if page.group_size %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+                        👥 Up to {{ page.group_size }} travelers
+                    </span>
+                {% endif %}
+                {% if page.theme %}
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                        🎨 {{ page.theme }}
+                    </span>
+                {% endif %}
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+            {% if page.subtitle %}
+                <p class="text-xl text-gray-600 mb-6">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+                {% if page.season %}
+                    <span class="flex items-center gap-1">
+                        🌡️ {{ page.season }}
+                    </span>
+                {% endif %}
+            </div>
+        </header>
+        
+        <!-- Journey Content -->
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="prose prose-lg max-w-none mb-8">
+                    {{ content }}
+                </div>
+            </div>
+            
+            <!-- Journey Details Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8 space-y-6">
+                    <!-- Quick Info -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Journey Details</h3>
+                        <div class="space-y-3 text-sm">
+                            {% if page.dates %}
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500">📅 Dates:</span>
+                                    <span class="font-medium">{{ page.dates }}</span>
+                                </div>
+                            {% endif %}
+                            {% if page.duration %}
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500">⏱️ Duration:</span>
+                                    <span class="font-medium">{{ page.duration }}</span>
+                                </div>
+                            {% endif %}
+                            {% if page.group_size %}
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500">👥 Group Size:</span>
+                                    <span class="font-medium">Up to {{ page.group_size }} travelers</span>
+                                </div>
+                            {% endif %}
+                            {% if page.theme %}
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500">🎨 Theme:</span>
+                                    <span class="font-medium">{{ page.theme }}</span>
+                                </div>
+                            {% endif %}
+                            {% if page.season %}
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500">🌡️ Season:</span>
+                                    <span class="font-medium">{{ page.season }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- What's Included -->
+                    {% if page.includes %}
+                    <div class="bg-green-50 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">✅ What's Included</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            {% for item in page.includes %}
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-600 mt-0.5">✓</span>
+                                    <span>{{ item }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Highlights -->
+                    {% if page.highlights %}
+                    <div class="bg-blue-50 rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">� Journey Highlights</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            {% for highlight in page.highlights %}
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-600 mt-0.5">★</span>
+                                    <span>{{ highlight }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Book Now Section -->
+                    <div class="bg-primary-50 rounded-xl p-6 text-center">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Ready to Join This Journey?</h3>
+                        <p class="text-sm text-gray-600 mb-4">Limited to {{ page.group_size | default: "10" }} travelers for an intimate experience</p>
+                        <a href="{{ '/contact' | relative_url }}?journey={{ page.title | url_encode }}" 
+                           class="btn btn-primary w-full mb-3">
+                            🎟️ Request Booking Information
+                        </a>
+                        <p class="text-xs text-gray-500">
+                            All journeys require advance booking and deposit
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

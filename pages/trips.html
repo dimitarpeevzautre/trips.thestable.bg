@@ -1,0 +1,173 @@
+---
+layout: page
+title: "All Journeys"
+permalink: /trips/
+description: "Browse all our guided camper adventures through Bulgaria"
+---
+
+<div class="mb-8">
+    <p class="text-lg text-gray-600 mb-6 text-center">
+        Six carefully curated journeys for 2026, each designed to offer a unique experience in Bulgaria. 
+        Choose the adventure that calls to you and prepare to explore authentic Bulgaria.
+    </p>
+    
+    <div class="flex flex-wrap gap-4 mb-6 justify-center">
+        <button class="filter-btn btn btn-outline active" data-filter="all">All Journeys</button>
+        <button class="filter-btn btn btn-outline" data-filter="spring">Spring</button>
+        <button class="filter-btn btn btn-outline" data-filter="summer">Summer</button>
+        <button class="filter-btn btn btn-outline" data-filter="autumn">Autumn</button>
+    </div>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="journeys-grid">
+    {% for journey in site.trips %}
+    <div class="journey-card card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" 
+         data-season="{{ journey.season | downcase }}">
+        {% if journey.featured_image %}
+            <div class="h-48 bg-gray-300 overflow-hidden">
+                <img src="{{ journey.featured_image | relative_url }}" 
+                     alt="{{ journey.title }}" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+        {% else %}
+            <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
+                <span class="text-4xl">{{ journey.emoji | default: "🚐" }}</span>
+            </div>
+        {% endif %}
+        
+        <div class="p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="text-2xl">{{ journey.emoji | default: "🚐" }}</span>
+                {% if journey.dates %}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                        � {{ journey.dates }}
+                    </span>
+                {% endif %}
+                {% if journey.duration %}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
+                        ⏱️ {{ journey.duration }}
+                    </span>
+                {% endif %}
+                {% if journey.season %}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+                        {% case journey.season %}
+                            {% when 'Spring' %}bg-green-100 text-green-800
+                            {% when 'Early Summer', 'High Summer' %}bg-yellow-100 text-yellow-800
+                            {% when 'Early Autumn' %}bg-orange-100 text-orange-800
+                            {% else %}bg-gray-100 text-gray-800
+                        {% endcase %}">
+                        �️ {{ journey.season }}
+                    </span>
+                {% endif %}
+            </div>
+            
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                <a href="{{ journey.url | relative_url }}" class="hover:text-primary-600 transition-colors">
+                    {{ journey.title }}
+                </a>
+            </h3>
+            
+            {% if journey.subtitle %}
+                <p class="text-gray-600 mb-3 text-sm">{{ journey.subtitle }}</p>
+            {% endif %}
+            
+            {% if journey.excerpt %}
+                <p class="text-gray-600 mb-4 text-sm">{{ journey.excerpt | strip_html | truncate: 120 }}</p>
+            {% endif %}
+            
+            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                {% if journey.theme %}
+                    <span class="flex items-center gap-1">
+                        🎨 {{ journey.theme }}
+                    </span>
+                {% endif %}
+                {% if journey.group_size %}
+                    <span class="flex items-center gap-1">
+                        👥 Up to {{ journey.group_size }}
+                    </span>
+                {% endif %}
+            </div>
+            
+            <a href="{{ journey.url | relative_url }}" class="btn btn-primary w-full">
+                View Journey Details
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if site.trips.size == 0 %}
+<div class="text-center py-12">
+    <div class="text-6xl mb-4">🚐</div>
+    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Journeys Coming Soon</h3>
+    <p class="text-gray-600 mb-6">We're preparing amazing camper adventures for 2026!</p>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">
+        Get Notified When Bookings Open
+    </a>
+</div>
+{% endif %}
+
+<div class="text-center mt-12 pt-8 border-t border-gray-200">
+    <h3 class="text-xl font-semibold text-gray-900 mb-4">Ready to Choose Your Adventure?</h3>
+    <p class="text-gray-600 mb-6">
+        Click on any journey card to see the full route, highlights, and unique "DNA profile" of the experience.
+        Each journey is limited to 10 travelers for an intimate and authentic Bulgarian adventure.
+    </p>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">
+        Request Booking Information
+    </a>
+</div>
+
+<script>
+// Enhanced filter functionality for seasons
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const journeyCards = document.querySelectorAll('.journey-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active', 'btn-primary'));
+            filterButtons.forEach(btn => btn.classList.add('btn-outline'));
+            this.classList.remove('btn-outline');
+            this.classList.add('btn-primary', 'active');
+            
+            // Filter journeys
+            journeyCards.forEach(card => {
+                const season = card.getAttribute('data-season');
+                let show = false;
+                
+                if (filter === 'all') {
+                    show = true;
+                } else if (filter === 'spring' && (season.includes('spring'))) {
+                    show = true;
+                } else if (filter === 'summer' && (season.includes('summer'))) {
+                    show = true;
+                } else if (filter === 'autumn' && (season.includes('autumn'))) {
+                    show = true;
+                }
+                
+                if (show) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+
+<style>
+.filter-btn.active {
+    @apply bg-primary-600 text-white border-primary-600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
