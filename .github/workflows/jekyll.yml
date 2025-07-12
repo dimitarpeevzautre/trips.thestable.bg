@@ -47,8 +47,14 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Create assets directory
+        run: mkdir -p assets/css
+
       - name: Build CSS with Tailwind
         run: npm run build-css-prod
+
+      - name: Verify CSS was built
+        run: ls -la assets/css/
 
       - name: Build Jekyll site
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
