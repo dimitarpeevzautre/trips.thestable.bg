@@ -15,6 +15,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Tailwind CSS
+assets/css/style.css
 assets/css/style.css.map
 
 # OS

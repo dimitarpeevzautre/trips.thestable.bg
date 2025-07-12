@@ -67,26 +67,31 @@ A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse
    npm install
    ```
 
-4. **Build CSS with Tailwind**
+4. **Start development server**
    ```bash
-   npm run build-css
+   npm run dev
+   ```
+   This will build the CSS and start Jekyll with live reload.
+
+   **Alternative**: For separate processes:
+   ```bash
+   npm run build-css     # Watch mode for CSS changes
+   bundle exec jekyll serve --livereload
    ```
 
-5. **Start Jekyll development server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-6. **Open in browser**
+5. **Open in browser**
    ```
    http://localhost:4000
    ```
 
 ### Development Workflow
 
-1. **CSS Development**: Run `npm run build-css` to watch for changes and rebuild CSS
-2. **Content Changes**: Jekyll will automatically rebuild when you change content files
-3. **Production Build**: Run `npm run build-css-prod` for minified CSS
+1. **Quick Start**: Run `npm run dev` for full development setup
+2. **CSS Development**: The CSS is built automatically; source files are in `src/input.css`
+3. **Content Changes**: Jekyll will automatically rebuild when you change content files
+4. **Production Build**: Run `npm run build` for optimized build
+
+> **Note**: The compiled CSS file (`assets/css/style.css`) is not tracked in git. It's built automatically during development and deployment.
 
 ## 📝 Adding Content
 

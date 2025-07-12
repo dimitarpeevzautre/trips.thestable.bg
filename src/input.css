@@ -76,3 +76,19 @@
     animation-delay: 0.6s;
   }
 }
+
+@layer utilities {
+  /* Additional z-index utilities */
+  .z-40 {
+    z-index: 40;
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
+  
+  /* Backdrop blur utilities */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+}
