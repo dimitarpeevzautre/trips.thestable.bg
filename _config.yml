@@ -5,7 +5,7 @@ baseurl: "/trips.thestable.bg"
 url: "https://yourusername.github.io"
 
 # Logo settings
-logo: "/assets/images/logo/logo.svg"
+logo: "assets/images/logo/logo.svg"
 
 # Analytics
 google_analytics: G-4ZJF48SWW2

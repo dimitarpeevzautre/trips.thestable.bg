@@ -55,8 +55,12 @@ The logo system is already fully implemented:
 
 The logo path is set in `_config.yml`:
 ```yaml
-logo: "/assets/images/logo/logo.svg"
+logo: "assets/images/logo/logo.svg"
 ```
+
+**Note**: The path uses a relative format (without leading `/`) to work with different baseurl configurations:
+- With baseurl: `https://yourusername.github.io/trips.thestable.bg/assets/images/logo/logo.svg`
+- Without baseurl: `http://localhost:4000/assets/images/logo/logo.svg`
 
 You can change this path if needed, but the current structure is recommended.
 
