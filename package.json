@@ -1,16 +1,32 @@
 {
   "name": "trips-thestable-bg",
   "version": "1.0.0",
-  "description": "Frontend for organised trips",
+  "description": "Frontend for organised trips - Jekyll site for The Stable camper adventures",
   "scripts": {
     "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
     "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
     "dev": "npm run build-css-prod && bundle exec jekyll serve --livereload",
-    "build": "npm run build-css-prod && bundle exec jekyll build"
+    "build": "npm run build-css-prod && bundle exec jekyll build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run format:check",
+    "pre-commit": "npm run format && npm run build-css-prod"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss": "^3.3.6"
-  }
+    "tailwindcss": "^3.3.6",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [
+    "jekyll",
+    "tailwind",
+    "travel",
+    "bulgaria",
+    "camper",
+    "adventures",
+    "static-site"
+  ],
+  "author": "The Stable",
+  "license": "MIT"
 }

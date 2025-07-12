@@ -1,47 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    
+    <meta
+      name="description"
+      content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+    />
+
     <!-- SEO -->
     {% seo %}
-    
+
     <!-- Google Analytics -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZJF48SWW2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4ZJF48SWW2');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4ZJF48SWW2");
     </script>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logo/favicon.svg' | relative_url }}">
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-    
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ '/assets/images/logo/favicon.svg' | relative_url }}"
+    />
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+
     <!-- Custom head content -->
     {% if page.head %}{{ page.head }}{% endif %}
-</head>
-<body class="min-h-screen bg-gray-50">
+  </head>
+  <body class="min-h-screen bg-gray-50">
     <div class="relative">
-        {% include header.html %}
-        
-        <main class="relative">
-            {{ content }}
-        </main>
+      {% include header.html %}
+
+      <main class="relative">{{ content }}</main>
     </div>
-    
     {% include footer.html %}
-    
+
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     {% if page.scripts %}{{ page.scripts }}{% endif %}
-</body>
+  </body>
 </html>

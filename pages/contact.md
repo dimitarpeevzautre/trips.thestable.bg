@@ -1,13 +1,16 @@
 ---
 layout: page
-title: "Contact Us"
+title: 'Contact Us'
 permalink: /contact/
-description: "Get in touch with The Stable team for camper journey bookings and inquiries"
+description:
+  'Get in touch with The Stable team for camper journey bookings and inquiries'
 ---
 
 ## Get In Touch
 
-We'd love to hear from you! Whether you have questions about our camper journeys, want to book an adventure, or just want to chat about exploring Bulgaria, we're here to help.
+We'd love to hear from you! Whether you have questions about our camper
+journeys, want to book an adventure, or just want to chat about exploring
+Bulgaria, we're here to help.
 
 <div class="grid md:grid-cols-2 gap-12 mt-8">
     <div>
@@ -153,4 +156,5 @@ We'd love to hear from you! Whether you have questions about our camper journeys
 
 ---
 
-**Ready for your next Bulgarian adventure?** We can't wait to explore Bulgaria's diverse regions and hidden gems with you!
+**Ready for your next Bulgarian adventure?** We can't wait to explore Bulgaria's
+diverse regions and hidden gems with you!

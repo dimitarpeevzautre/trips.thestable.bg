@@ -1,10 +1,12 @@
 # Hero Section Usage
 
-The hero section component supports both images and videos for maximum flexibility.
+The hero section component supports both images and videos for maximum
+flexibility.
 
 ## Image Hero (Current Implementation)
+
 ```liquid
-{% include hero.html 
+{% include hero.html
    image="/assets/images/hero-camper.jpg"
    alt="Bulgarian camper adventure landscape"
    title="Guided Camper Adventures Through Bulgaria"
@@ -15,8 +17,9 @@ The hero section component supports both images and videos for maximum flexibili
 ```
 
 ## Video Hero Example
+
 ```liquid
-{% include hero.html 
+{% include hero.html
    video="/assets/videos/bulgaria-adventure.mp4"
    fallback_image="/assets/images/hero-camper.jpg"
    alt="Bulgarian adventure video"
@@ -40,10 +43,7 @@ The hero section component supports both images and videos for maximum flexibili
 
 ## Features
 
-✅ **Full-screen height** on mobile and desktop
-✅ **Parallax scrolling** effect
-✅ **Transparent navigation** over hero
-✅ **Image zoom animation** on load
-✅ **Responsive design**
-✅ **Video support** with fallback
-✅ **Scroll indicator** with smooth scrolling
+✅ **Full-screen height** on mobile and desktop ✅ **Parallax scrolling** effect
+✅ **Transparent navigation** over hero ✅ **Image zoom animation** on load ✅
+**Responsive design** ✅ **Video support** with fallback ✅ **Scroll indicator**
+with smooth scrolling

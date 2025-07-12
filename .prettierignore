@@ -1,0 +1,11 @@
+node_modules/
+_site/
+.jekyll-cache/
+.sass-cache/
+*.log
+*.lock
+vendor/
+package-lock.json
+.DS_Store
+Thumbs.db
+assets/css/style.css
