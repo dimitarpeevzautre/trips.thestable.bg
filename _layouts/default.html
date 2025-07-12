@@ -20,6 +20,7 @@
     </script>
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logo/favicon.svg' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
     
     <!-- Styles -->
@@ -29,11 +30,13 @@
     {% if page.head %}{{ page.head }}{% endif %}
 </head>
 <body class="min-h-screen bg-gray-50">
-    {% include header.html %}
-    
-    <main class="relative">
-        {{ content }}
-    </main>
+    <div class="relative">
+        {% include header.html %}
+        
+        <main class="relative">
+            {{ content }}
+        </main>
+    </div>
     
     {% include footer.html %}
     

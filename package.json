@@ -4,7 +4,9 @@
   "description": "Frontend for organised trips",
   "scripts": {
     "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
-    "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
+    "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
+    "dev": "npm run build-css-prod && bundle exec jekyll serve --livereload",
+    "build": "npm run build-css-prod && bundle exec jekyll build"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
