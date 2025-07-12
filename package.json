@@ -5,8 +5,8 @@
   "scripts": {
     "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
     "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
-    "dev": "npm run build-css",
-    "build": "npm run build-css-prod",
+    "dev": "npm run build-css-prod && bundle exec jekyll serve --livereload",
+    "build": "npm run build-css-prod && bundle exec jekyll build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run format:check",

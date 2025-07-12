@@ -25,19 +25,22 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
-
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logo/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
 
     <!-- Custom head content -->
     {% if page.head %}{{ page.head }}{% endif %}
-  </head>
-  <body class="min-h-screen bg-gray-50">
-    {% include header.html %}
-
-    <main class="relative">{{ content }}</main>
-
+</head>
+<body class="min-h-screen bg-gray-50">
+    <div class="relative">
+        {% include header.html %}
+        
+        <main class="relative">
+            {{ content }}
+        </main>
+    </div>
     {% include footer.html %}
 
     <!-- Scripts -->
