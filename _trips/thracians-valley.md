@@ -1,7 +1,7 @@
 ---
 title: 'Glorious Thracians & The Valley of Kings'
 subtitle: 'A deep dive into ancient civilizations and royal tombs'
-featured_image: '/assets/images/trips/thracians-valley.jpg'
+featured_image: '/assets/images/trips/thracians-valley.webp'
 emoji: '🏺'
 dates: 'May 16 – May 24, 2026'
 start_date: 2026-05-16
