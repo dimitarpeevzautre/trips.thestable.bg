@@ -53,13 +53,32 @@ jobs:
       - name: Build CSS with Tailwind
         run: npm run build-css-prod
 
-      - name: Verify CSS was built
-        run: ls -la assets/css/
+      - name: Debug - Check file structure before Jekyll build
+        run: |
+          echo "=== Checking assets directory ==="
+          ls -la assets/
+          echo "=== Checking CSS files ==="
+          ls -la assets/css/
+          echo "=== Checking CSS file content (first 5 lines) ==="
+          head -5 assets/css/style.css || echo "CSS file not found"
+          echo "=== Current working directory ==="
+          pwd
+          echo "=== All files in root ==="
+          ls -la
 
       - name: Build Jekyll site
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
+      - name: Debug - Check Jekyll output
+        run: |
+          echo "=== Checking _site directory ==="
+          ls -la _site/
+          echo "=== Checking _site/assets ==="
+          ls -la _site/assets/ || echo "_site/assets not found"
+          echo "=== Checking _site/assets/css ==="
+          ls -la _site/assets/css/ || echo "_site/assets/css not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
