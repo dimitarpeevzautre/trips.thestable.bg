@@ -7,6 +7,7 @@ dates: 'September 5 – September 13, 2026'
 start_date: 2026-09-05
 duration: '9 days'
 group_size: '10'
+remaining_seats: 5
 theme: 'Wine Culture & Culinary Heritage'
 season: 'Early Autumn'
 includes:

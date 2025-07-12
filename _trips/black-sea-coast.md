@@ -7,6 +7,7 @@ dates: 'August 15 – August 23, 2026'
 start_date: 2026-08-15
 duration: '9 days'
 group_size: '10'
+remaining_seats: 7
 theme: 'Coastal Culture & Maritime Heritage'
 season: 'High Summer'
 includes:

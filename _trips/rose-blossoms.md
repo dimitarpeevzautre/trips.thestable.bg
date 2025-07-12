@@ -7,6 +7,7 @@ dates: 'May 30 – June 7, 2026'
 start_date: 2026-05-30
 duration: '9 days'
 group_size: '10'
+remaining_seats: 2
 theme: 'Cultural Festival & Natural Beauty'
 season: 'Early Summer'
 includes:

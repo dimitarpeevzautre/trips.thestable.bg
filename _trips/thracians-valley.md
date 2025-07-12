@@ -7,6 +7,7 @@ dates: 'May 16 – May 24, 2026'
 start_date: 2026-05-16
 duration: '9 days'
 group_size: '10'
+remaining_seats: 6
 theme: 'Ancient History & Archaeology'
 season: 'Late Spring'
 includes:

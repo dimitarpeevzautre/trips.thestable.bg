@@ -79,6 +79,21 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Aspect ratio utilities */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  /* Trip card styles */
+  .trip-card {
+    @apply relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300;
+  }
+  
+  .trip-card:hover {
+    @apply shadow-xl;
+    transform: translateY(-8px);
+  }
+
   /* Hero Animations */
   .hero-image.loaded {
     transform: scale(1.05);

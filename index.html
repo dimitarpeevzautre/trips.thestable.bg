@@ -34,59 +34,46 @@ culture, nature, and authentic experiences" cta_buttons='<a
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% assign all_journeys = site.trips | sort: "start_date" %}
       {% for journey in all_journeys %}
-      <div class="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-        {% if journey.featured_image %}
-        <div class="h-48 bg-gray-300 overflow-hidden">
-          <img
-            src="{{ journey.featured_image | relative_url }}"
-            alt="{{ journey.title }}"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        {% else %}
-        <div
-          class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center"
-        >
-          <span class="text-4xl">{{ journey.emoji | default: "🚐" }}</span>
-        </div>
-        {% endif %}
-
-        <div class="p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="text-2xl">{{ journey.emoji | default: "🚐" }}</span>
-            {% if journey.dates %}
-            <span class="text-sm text-gray-500">{{ journey.dates }}</span>
-            {% endif %}
+      <a href="{{ journey.url | relative_url }}" class="block group">
+        <div class="relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <!-- Remaining seats badge -->
+          {% assign remaining = journey.remaining_seats | default: 5 %}
+          <div class="absolute top-3 right-3 z-10">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-yellow-400 text-black shadow-md">
+              {{ remaining }} seats left
+            </span>
           </div>
-
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">
-            <a
-              href="{{ journey.url | relative_url }}"
-              class="hover:text-primary-600 transition-colors"
-            >
-              {{ journey.title }}
-            </a>
-          </h3>
-
-          {% if journey.excerpt %}
-          <p class="text-gray-600 mb-4 text-sm">
-            {{ journey.excerpt | strip_html | truncate: 120 }}
-          </p>
+          
+          <!-- Image -->
+          {% if journey.featured_image %}
+          <div class="absolute inset-0">
+            <img
+              src="{{ journey.featured_image | relative_url }}"
+              alt="{{ journey.title }}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          {% else %}
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
+            <span class="text-6xl">{{ journey.emoji | default: "🚐" }}</span>
+          </div>
           {% endif %}
-
-          <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
-            {% if journey.duration %}
-            <span class="flex items-center gap-1"> ⏱️ {{ journey.duration }} </span>
-            {% endif %} {% if journey.group_size %}
-            <span class="flex items-center gap-1"> 👥 Up to {{ journey.group_size }} people </span>
-            {% endif %}
+          
+          <!-- Content overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-lg font-bold mb-2 leading-tight">
+                {{ journey.title }}
+              </h3>
+              {% if journey.dates %}
+              <p class="text-sm text-white/90 font-medium">
+                {{ journey.dates }}
+              </p>
+              {% endif %}
+            </div>
           </div>
-
-          <a href="{{ journey.url | relative_url }}" class="btn btn-primary w-full">
-            View Journey Details
-          </a>
         </div>
-      </div>
+      </a>
       {% endfor %}
     </div>
 

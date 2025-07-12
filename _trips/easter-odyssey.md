@@ -7,6 +7,7 @@ dates: 'April 11 – April 19, 2026'
 start_date: 2026-04-11
 duration: '9 days'
 group_size: '10'
+remaining_seats: 3
 theme: 'Cultural & Religious Heritage'
 season: 'Spring'
 includes:
