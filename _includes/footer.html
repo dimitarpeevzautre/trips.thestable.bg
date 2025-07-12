@@ -4,7 +4,14 @@
             <!-- Company Info -->
             <div class="md:col-span-2">
                 <div class="flex items-center space-x-2 mb-4">
-                    <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+                    {% if site.logo %}
+                    <img src="{{ site.logo | relative_url }}" 
+                         alt="{{ site.title }}" 
+                         class="h-8 w-auto"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    {% endif %}
+                    <!-- Fallback for missing logo -->
+                    <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center" {% if site.logo %}style="display: none;"{% endif %}>
                         <span class="text-white font-bold">🏔️</span>
                     </div>
                     <span class="text-xl font-display font-semibold">{{ site.title }}</span>
