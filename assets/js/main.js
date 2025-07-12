@@ -2,12 +2,94 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.getElementById('main-header');
+    const hero = document.getElementById('hero');
     
+    // Mobile menu toggle
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
     }
+    
+    // Header transparency and parallax effect
+    if (header && hero) {
+        function updateHeader() {
+            const scrollY = window.scrollY;
+            const heroHeight = hero.offsetHeight;
+            
+            // Update header background based on scroll position
+            if (scrollY < heroHeight - 100) {
+                // Transparent header over hero
+                header.classList.remove('bg-white', 'shadow-sm');
+                header.classList.add('bg-transparent');
+                // Make text white when over hero
+                const links = header.querySelectorAll('a:not(.btn), span');
+                links.forEach(link => {
+                    link.classList.remove('text-gray-700', 'text-gray-900');
+                    link.classList.add('text-white');
+                });
+                // Update button hover states
+                const navLinks = header.querySelectorAll('a:not(.btn)');
+                navLinks.forEach(link => {
+                    link.classList.remove('hover:text-primary-600');
+                    link.classList.add('hover:text-blue-200');
+                });
+            } else {
+                // Solid white header
+                header.classList.remove('bg-transparent');
+                header.classList.add('bg-white', 'shadow-sm');
+                // Restore original text colors
+                const links = header.querySelectorAll('a:not(.btn), span');
+                links.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-700');
+                });
+                const titleSpan = header.querySelector('span.text-xl');
+                if (titleSpan) {
+                    titleSpan.classList.remove('text-white');
+                    titleSpan.classList.add('text-gray-900');
+                }
+                // Restore button hover states
+                const navLinks = header.querySelectorAll('a:not(.btn)');
+                navLinks.forEach(link => {
+                    link.classList.remove('hover:text-blue-200');
+                    link.classList.add('hover:text-primary-600');
+                });
+            }
+            
+            // Parallax effect for hero
+            const heroMedia = hero.querySelector('.hero-media');
+            if (heroMedia && scrollY < heroHeight) {
+                const parallaxSpeed = 0.5;
+                const yPos = scrollY * parallaxSpeed;
+                heroMedia.style.transform = `translateY(${yPos}px)`;
+            }
+        }
+        
+        // Initial header state - transparent over hero
+        header.classList.add('bg-transparent');
+        const links = header.querySelectorAll('a:not(.btn), span');
+        links.forEach(link => {
+            link.classList.add('text-white');
+        });
+        
+        // Update on scroll
+        window.addEventListener('scroll', updateHeader);
+        updateHeader(); // Initial call
+    }
+    
+    // Hero image zoom animation
+    const heroImages = document.querySelectorAll('.hero-image');
+    heroImages.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        }
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
