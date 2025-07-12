@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="40" fill="#1f2937" rx="6"/>
+  
+  <!-- Van Icon -->
+  <g transform="translate(8, 8)">
+    <rect x="0" y="16" width="24" height="8" fill="#f59e0b" rx="2"/>
+    <rect x="2" y="12" width="20" height="8" fill="#fbbf24" rx="2"/>
+    <rect x="4" y="8" width="16" height="8" fill="#fde047" rx="2"/>
+    <circle cx="6" cy="20" r="2" fill="#374151"/>
+    <circle cx="18" cy="20" r="2" fill="#374151"/>
+    <rect x="8" y="10" width="3" height="3" fill="#1f2937"/>
+    <rect x="13" y="10" width="3" height="3" fill="#1f2937"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="40" y="16" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f3f4f6">THE</text>
+  <text x="40" y="30" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">STABLE</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="160" cy="12" r="3" fill="#10b981"/>
+  <circle cx="170" cy="12" r="2" fill="#3b82f6"/>
+  <circle cx="160" cy="28" r="2" fill="#ef4444"/>
+  <circle cx="170" cy="28" r="3" fill="#8b5cf6"/>
+</svg>
