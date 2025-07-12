@@ -79,6 +79,10 @@ jobs:
           ls -la _site/assets/ || echo "_site/assets not found"
           echo "=== Checking _site/assets/css ==="
           ls -la _site/assets/css/ || echo "_site/assets/css not found"
+          echo "=== Checking CSS link in index.html ==="
+          grep -n "style.css" _site/index.html || echo "CSS link not found in index.html"
+          echo "=== Checking first few lines of CSS file ==="
+          head -3 _site/assets/css/style.css || echo "CSS file not readable"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
