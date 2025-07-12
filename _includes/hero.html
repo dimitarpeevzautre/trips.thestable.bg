@@ -1,0 +1,72 @@
+<!-- Hero Section with Parallax -->
+<section id="hero" class="relative h-screen overflow-hidden">
+    <!-- Hero Media Container -->
+    <div class="absolute inset-0">
+        {% if include.video %}
+            <!-- Video Hero -->
+            <video 
+                class="hero-media w-full h-full object-cover" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                preload="metadata">
+                <source src="{{ include.video | relative_url }}" type="video/mp4">
+                {% if include.fallback_image %}
+                    <img src="{{ include.fallback_image | relative_url }}" alt="{{ include.alt | default: 'Hero background' }}" class="w-full h-full object-cover">
+                {% endif %}
+            </video>
+        {% elsif include.image %}
+            <!-- Image Hero -->
+            <img 
+                src="{{ include.image | relative_url }}" 
+                alt="{{ include.alt | default: 'Hero background' }}" 
+                class="hero-media hero-image w-full h-full object-cover transition-transform duration-1000 ease-out">
+        {% else %}
+            <!-- Fallback Gradient -->
+            <div class="hero-media w-full h-full bg-gradient-to-r from-blue-600 to-green-600"></div>
+        {% endif %}
+    </div>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 container-custom h-full flex items-center justify-center text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            {% if include.title %}
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 animate-fade-in-up">
+                    {{ include.title }}
+                </h1>
+            {% endif %}
+            
+            {% if include.subtitle %}
+                <p class="text-xl md:text-2xl lg:text-3xl mb-4 text-blue-100 animate-fade-in-up animation-delay-200">
+                    {{ include.subtitle }}
+                </p>
+            {% endif %}
+            
+            {% if include.description %}
+                <p class="text-lg md:text-xl mb-8 text-blue-100 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
+                    {{ include.description }}
+                </p>
+            {% endif %}
+            
+            {% if include.cta_buttons %}
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
+                    {{ include.cta_buttons }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-20">
+        <div class="flex flex-col items-center">
+            <div class="text-sm mb-2 opacity-75">Scroll to explore</div>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </div>
+</section>

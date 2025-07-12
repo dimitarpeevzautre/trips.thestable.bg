@@ -5,30 +5,14 @@ description: "Guided camper adventures through Bulgaria - Expert-led journeys fo
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-blue-600 to-green-600 text-white">
-    <div class="absolute inset-0 bg-black opacity-20"></div>
-    <div class="relative container-custom py-24">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">
-                Guided Camper Adventures Through Bulgaria
-            </h1>
-            <p class="text-xl md:text-2xl mb-4 text-blue-100">
-                Expert-led journeys for groups of up to 10
-            </p>
-            <p class="text-lg mb-8 text-blue-100">
-                Discover Bulgaria's hidden gems through carefully curated adventures that blend culture, nature, and authentic experiences
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#journeys" class="btn btn-primary btn-lg">
-                    🚐 Explore Journeys
-                </a>
-                <a href="#pricing" class="btn btn-outline btn-lg">
-                    � View Pricing
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+{% include hero.html 
+   image="/assets/images/hero-main.jpg"
+   alt="Bulgarian camper adventure landscape"
+   title="Guided Camper Adventures Through Bulgaria"
+   subtitle="Expert-led journeys for groups of up to 10"
+   description="Discover Bulgaria's hidden gems through carefully curated adventures that blend culture, nature, and authentic experiences"
+   cta_buttons='<a href="#journeys" class="btn btn-primary btn-lg">🚐 Explore Journeys</a><a href="#pricing" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600">💰 View Pricing</a>'
+%}
 
 <!-- Journeys Section -->
 <section id="journeys" class="py-16 bg-white">
