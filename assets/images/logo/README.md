@@ -12,7 +12,7 @@ This directory contains the logo assets for The Stable website.
 The logo is configured in `_config.yml` with the `logo` setting:
 
 ```yaml
-logo: "/assets/images/logo/logo.svg"
+logo: '/assets/images/logo/logo.svg'
 ```
 
 ## Updating the Logo
@@ -28,9 +28,12 @@ To update the logo with the official logo from the main site (thestable.bg):
 
 - **Format**: SVG preferred (scales well), PNG/JPG as fallback
 - **Size**: Header logo should be roughly 180x40px or similar aspect ratio
-- **Background**: Should work on light backgrounds (header has white/light background)
-- **Fallback**: The system will fallback to a van emoji icon if the logo fails to load
+- **Background**: Should work on light backgrounds (header has white/light
+  background)
+- **Fallback**: The system will fallback to a van emoji icon if the logo fails
+  to load
 
 ## Current Logo
 
-The current logo is a placeholder created specifically for this trips site. It should be replaced with the official logo from thestable.bg when available.
+The current logo is a placeholder created specifically for this trips site. It
+should be replaced with the official logo from thestable.bg when available.

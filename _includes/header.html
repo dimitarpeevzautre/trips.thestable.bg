@@ -1,46 +1,90 @@
-<header id="main-header" class="absolute top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
-    <nav class="container-custom">
-        <div class="flex justify-between items-center">
-            <!-- Spacer for left side to center logo -->
-            <div class="hidden md:flex items-center space-x-8 flex-1">
-                <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
-                <a href="{{ '/trips' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors">Journeys</a>
-            </div>
-            
-            <!-- Centered Logo -->
-            <div class="flex flex-col items-center">
-                <a href="{{ '/' | relative_url }}" class="inline-block">
-                    <img src="{{ site.logo | relative_url }}" 
-                         alt="{{ site.title }}" 
-                         class="h-[70px] md:h-[150px] w-auto"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                </a>
-            </div>
-            
-            <!-- Right side navigation -->
-            <div class="hidden md:flex items-center space-x-8 flex-1 justify-end">
-                <a href="{{ '/about' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
-                <a href="{{ '/contact' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
-                <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Book Adventure</a>
-            </div>
-            
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-700 hover:text-primary-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-            <div class="flex flex-col space-y-3 text-center">
-                <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors py-2">Home</a>
-                <a href="{{ '/trips' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors py-2">Journeys</a>
-                <a href="{{ '/about' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors py-2">About</a>
-                <a href="{{ '/contact' | relative_url }}" class="text-gray-700 hover:text-primary-600 transition-colors py-2">Contact</a>
-                <a href="{{ '/contact' | relative_url }}" class="btn btn-primary w-fit mx-auto">Book Adventure</a>
-            </div>
-        </div>
-    </nav>
+<header
+  id="main-header"
+  class="absolute top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300"
+>
+  <nav class="container-custom">
+    <div class="flex justify-between items-center">
+      <!-- Spacer for left side to center logo -->
+      <div class="hidden md:flex items-center space-x-8 flex-1">
+        <a
+          href="{{ '/' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors"
+          >Home</a
+        >
+        <a
+          href="{{ '/trips' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors"
+          >Journeys</a
+        >
+      </div>
+
+      <!-- Centered Logo -->
+      <div class="flex flex-col items-center">
+        <a href="{{ '/' | relative_url }}" class="inline-block">
+          <img
+            src="{{ site.logo | relative_url }}"
+            alt="{{ site.title }}"
+            class="h-[70px] md:h-[150px] w-auto"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+        </a>
+      </div>
+
+      <!-- Right side navigation -->
+      <div class="hidden md:flex items-center space-x-8 flex-1 justify-end">
+        <a
+          href="{{ '/about' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors"
+          >About</a
+        >
+        <a
+          href="{{ '/contact' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors"
+          >Contact</a
+        >
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Book Adventure</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden p-2 text-gray-700 hover:text-primary-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-3 text-center">
+        <a
+          href="{{ '/' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors py-2"
+          >Home</a
+        >
+        <a
+          href="{{ '/trips' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors py-2"
+          >Journeys</a
+        >
+        <a
+          href="{{ '/about' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors py-2"
+          >About</a
+        >
+        <a
+          href="{{ '/contact' | relative_url }}"
+          class="text-gray-700 hover:text-primary-600 transition-colors py-2"
+          >Contact</a
+        >
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary w-fit mx-auto"
+          >Book Adventure</a
+        >
+      </div>
+    </div>
+  </nav>
 </header>

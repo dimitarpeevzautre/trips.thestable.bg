@@ -60,7 +60,7 @@ module.exports = {
           700: '#a16207',
           800: '#854d0e',
           900: '#713f12',
-        }
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
