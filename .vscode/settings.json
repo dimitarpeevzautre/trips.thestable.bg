@@ -1,0 +1,60 @@
+{
+  "folders": [
+    {
+      "name": "trips.thestable.bg",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.html": "liquid",
+      "*.md": "markdown"
+    },
+    "emmet.includeLanguages": {
+      "liquid": "html",
+      "markdown": "html"
+    },
+    "liquid.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "css.validate": false,
+    "tailwindCSS.includeLanguages": {
+      "liquid": "html",
+      "markdown": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      "class[:]\\s*['\"]([^'\"]*)['\"]",
+      "class[:]\\s*['\"]([^'\"]*)['\"]"
+    ],
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/_site/**": true,
+      ".jekyll-cache/**": true
+    },
+    "search.exclude": {
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/_site": true,
+      ".jekyll-cache": true,
+      "**/assets/css/style.css": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "bradlc.vscode-tailwindcss",
+      "sissel.shopify-liquid",
+      "ms-vscode.vscode-json",
+      "yzhang.markdown-all-in-one",
+      "github.copilot",
+      "github.copilot-chat",
+      "ms-vscode.atom-keybindings",
+      "esbenp.prettier-vscode",
+      "ms-vscode.vscode-typescript-next",
+      "ms-vscode.live-server"
+    ]
+  }
+}

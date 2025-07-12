@@ -8,7 +8,7 @@ module.exports = {
     './pages/**/*.html',
     './pages/**/*.md',
     './*.html',
-    './*.md'
+    './*.md',
   ],
   theme: {
     extend: {
@@ -36,16 +36,13 @@ module.exports = {
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
-        }
+        },
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Poppins', 'system-ui', 'sans-serif'],
-      }
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ],
-}
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+};

@@ -1,11 +1,13 @@
 # The Stable - Guided Camper Adventures in Bulgaria
 
-A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse landscapes and cultural heritage.
+A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse
+landscapes and cultural heritage.
 
 ## 🚀 Features
 
 - **6 Signature Journeys**: Carefully curated camper adventures for 2026
-- **Modern Design**: Built with Tailwind CSS for a beautiful, responsive experience  
+- **Modern Design**: Built with Tailwind CSS for a beautiful, responsive
+  experience
 - **Camper Focus**: Specialized for guided camper travel experiences
 - **GitHub Pages Ready**: Optimized for GitHub Pages deployment
 - **SEO Optimized**: Built-in SEO with Jekyll SEO tag
@@ -13,6 +15,34 @@ A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse
 - **Photography Tours**: Specialized layouts for different trip types
 - **Contact Forms**: Ready-to-use contact forms
 - **Social Integration**: Social media ready
+
+## 🤖 AI-Enhanced Development
+
+This project includes comprehensive GitHub Copilot integration for enhanced
+development experience:
+
+### Copilot Configuration
+
+- **Custom Instructions**: See `.github/copilot-instructions.md` for detailed
+  project context
+- **Workspace Config**: VS Code settings optimized for Jekyll + Tailwind
+  development
+- **Code Quality**: Automated formatting with Prettier and EditorConfig
+- **Development Scripts**: Enhanced npm scripts for streamlined workflow
+
+### AI-Friendly Features
+
+- Detailed project documentation and coding standards
+- Consistent code formatting and structure
+- Pre-commit hooks for quality assurance
+- VS Code extensions recommendations for optimal development experience
+
+### Getting Started with AI Assistance
+
+1. Install recommended VS Code extensions
+2. Review `.github/copilot-instructions.md` for project context
+3. Use `npm run format` to maintain code consistency
+4. Leverage pre-commit hooks for quality checks
 
 ## 🛠️ Tech Stack
 
@@ -51,28 +81,41 @@ A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse
 
 ### Local Development
 
+**For quick setup, run the automated setup script:**
+
+```bash
+./setup.sh
+```
+
+**Or follow these manual steps:**
+
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd trips.thestable.bg
    ```
 
-2. **Install Ruby dependencies**
-   ```bash
-   bundle install
-   ```
+2. **Install Node.js dependencies**
 
-3. **Install Node.js dependencies**
    ```bash
    npm install
    ```
 
+3. **Install Ruby dependencies**
+
+   ```bash
+   bundle install
+   ```
+
 4. **Build CSS with Tailwind**
+
    ```bash
    npm run build-css
    ```
 
 5. **Start Jekyll development server**
+
    ```bash
    bundle exec jekyll serve
    ```
@@ -84,9 +127,13 @@ A Jekyll static site showcasing guided camper journeys across Bulgaria's diverse
 
 ### Development Workflow
 
-1. **CSS Development**: Run `npm run build-css` to watch for changes and rebuild CSS
-2. **Content Changes**: Jekyll will automatically rebuild when you change content files
-3. **Production Build**: Run `npm run build-css-prod` for minified CSS
+1. **CSS Development**: Run `npm run dev` to watch for changes and rebuild CSS
+2. **Code Formatting**: Run `npm run format` to format all code
+3. **Quality Checks**: Run `npm run pre-commit` before committing
+4. **Production Build**: Run `npm run build` for minified CSS
+5. **Content Changes**: Jekyll will automatically rebuild when you change
+   content files
+6. **Production Build**: Run `npm run build-css-prod` for minified CSS
 
 ## 📝 Adding Content
 
@@ -96,27 +143,27 @@ Create a new file in `_trips/` folder:
 
 ```markdown
 ---
-title: "Your Trip Title"
-subtitle: "Brief description"
+title: 'Your Trip Title'
+subtitle: 'Brief description'
 featured: true
-featured_image: "/assets/images/trips/your-trip.jpg"
-price: "150 BGN"
-duration: "2 days"
-difficulty: "Moderate"
-location: "Mountain Range, Bulgaria"
-dates: "August 15-16, 2025"
+featured_image: '/assets/images/trips/your-trip.jpg'
+price: '150 BGN'
+duration: '2 days'
+difficulty: 'Moderate'
+location: 'Mountain Range, Bulgaria'
+dates: 'August 15-16, 2025'
 spots_available: 10
 includes:
-  - "Professional guide"
-  - "Transportation"
-  - "Accommodation"
+  - 'Professional guide'
+  - 'Transportation'
+  - 'Accommodation'
 excludes:
-  - "Personal equipment"
-  - "Meals"
+  - 'Personal equipment'
+  - 'Meals'
 equipment:
-  - "Hiking boots"
-  - "Backpack"
-excerpt: "Brief trip description for listings"
+  - 'Hiking boots'
+  - 'Backpack'
+excerpt: 'Brief trip description for listings'
 ---
 
 Your trip content in Markdown format...
@@ -151,11 +198,13 @@ theme: {
 
 ### Fonts
 
-Update the Google Fonts import in `src/input.css` and the font family in `tailwind.config.js`.
+Update the Google Fonts import in `src/input.css` and the font family in
+`tailwind.config.js`.
 
 ### Components
 
-Add custom CSS components in `src/input.css` using Tailwind's `@layer components`:
+Add custom CSS components in `src/input.css` using Tailwind's
+`@layer components`:
 
 ```css
 @layer components {
@@ -197,10 +246,10 @@ bundle exec jekyll build
 Edit `_config.yml`:
 
 ```yaml
-title: "Your Site Title"
-description: "Your site description"
-baseurl: "/your-repo-name"
-url: "https://yourusername.github.io"
+title: 'Your Site Title'
+description: 'Your site description'
+baseurl: '/your-repo-name'
+url: 'https://yourusername.github.io'
 ```
 
 ### Navigation
@@ -210,20 +259,24 @@ Edit navigation links in `_includes/header.html`.
 ### Contact Information
 
 Update contact details in:
+
 - `_includes/footer.html`
 - `pages/contact.md`
 
 ## 🐛 Troubleshooting
 
 ### CSS Not Loading
+
 - Make sure you've run `npm run build-css`
 - Check that `assets/css/style.css` exists and has content
 
 ### Jekyll Build Errors
+
 - Ensure all YAML front matter is properly formatted
 - Check that required gems are installed with `bundle install`
 
 ### GitHub Pages Issues
+
 - Verify your repository name matches the `baseurl` in `_config.yml`
 - Make sure GitHub Actions have permissions to deploy
 
@@ -241,4 +294,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Ready to create amazing trip experiences?** Start customizing your site and sharing your adventures with the world! 🏔️
+**Ready to create amazing trip experiences?** Start customizing your site and
+sharing your adventures with the world! 🏔️

@@ -10,20 +10,24 @@ This directory is for storing images used on the website.
 ## Image Guidelines
 
 ### File Naming
+
 - Use descriptive, lowercase names with hyphens
 - Example: `rila-mountain-summit.jpg`
 
 ### Recommended Sizes
+
 - **Featured trip images**: 800x600px (4:3 aspect ratio)
 - **Trip gallery images**: 1200x800px
 - **Hero images**: 1920x1080px
 
 ### Formats
+
 - **JPEG** for photographs
 - **PNG** for graphics with transparency
 - **WebP** for modern browsers (optional)
 
 ### Optimization
+
 - Compress images to reduce file size
 - Consider using tools like TinyPNG or ImageOptim
 - Aim for under 500KB per image

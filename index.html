@@ -5,208 +5,236 @@ description: "Guided camper adventures through Bulgaria - Expert-led journeys fo
 ---
 
 <!-- Hero Section -->
-{% include hero.html 
-   image="/assets/images/hero-main.jpg"
-   alt="Bulgarian camper adventure landscape"
-   title="Guided Camper Adventures Through Bulgaria"
-   subtitle="Expert-led journeys for groups of up to 10"
-   description="Discover Bulgaria's hidden gems through carefully curated adventures that blend culture, nature, and authentic experiences"
-   cta_buttons='<a href="#journeys" class="btn btn-primary btn-lg">🚐 Explore Journeys</a><a href="#pricing" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600">💰 View Pricing</a>'
-%}
+{% include hero.html image="/assets/images/hero-main.jpg" alt="Bulgarian camper adventure landscape"
+title="Guided Camper Adventures Through Bulgaria" subtitle="Expert-led journeys for groups of up to
+10" description="Discover Bulgaria's hidden gems through carefully curated adventures that blend
+culture, nature, and authentic experiences" cta_buttons='<a
+  href="#journeys"
+  class="btn btn-primary btn-lg"
+  >🚐 Explore Journeys</a
+><a
+  href="#pricing"
+  class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600"
+  >💰 View Pricing</a
+>' %}
 
 <!-- Journeys Section -->
 <section id="journeys" class="py-16 bg-white">
-    <div class="container-custom">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-                Six Selected Journeys for 2026
-            </h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Each journey is designed to offer a unique experience in Bulgaria. Choose the adventure that calls to you and prepare to explore authentic Bulgaria.
-            </p>
+  <div class="container-custom">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+        Six Selected Journeys for 2026
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Each journey is designed to offer a unique experience in Bulgaria. Choose the adventure that
+        calls to you and prepare to explore authentic Bulgaria.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% assign featured_journeys = site.trips | where: "featured", true | limit: 6 %} {% if
+      featured_journeys.size == 0 %} {% assign featured_journeys = site.trips | limit: 6 %} {% endif
+      %} {% for journey in featured_journeys %}
+      <div class="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        {% if journey.featured_image %}
+        <div class="h-48 bg-gray-300 overflow-hidden">
+          <img
+            src="{{ journey.featured_image | relative_url }}"
+            alt="{{ journey.title }}"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
         </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% assign featured_journeys = site.trips | where: "featured", true | limit: 6 %}
-            {% if featured_journeys.size == 0 %}
-                {% assign featured_journeys = site.trips | limit: 6 %}
-            {% endif %}
-            
-            {% for journey in featured_journeys %}
-            <div class="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                {% if journey.featured_image %}
-                    <div class="h-48 bg-gray-300 overflow-hidden">
-                        <img src="{{ journey.featured_image | relative_url }}" 
-                             alt="{{ journey.title }}" 
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                {% else %}
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
-                        <span class="text-4xl">{{ journey.emoji | default: "🚐" }}</span>
-                    </div>
-                {% endif %}
-                
-                <div class="p-6">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="text-2xl">{{ journey.emoji | default: "🚐" }}</span>
-                        {% if journey.dates %}
-                            <span class="text-sm text-gray-500">{{ journey.dates }}</span>
-                        {% endif %}
-                    </div>
-                    
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                        <a href="{{ journey.url | relative_url }}" class="hover:text-primary-600 transition-colors">
-                            {{ journey.title }}
-                        </a>
-                    </h3>
-                    
-                    {% if journey.excerpt %}
-                        <p class="text-gray-600 mb-4 text-sm">{{ journey.excerpt | strip_html | truncate: 120 }}</p>
-                    {% endif %}
-                    
-                    <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        {% if journey.duration %}
-                            <span class="flex items-center gap-1">
-                                ⏱️ {{ journey.duration }}
-                            </span>
-                        {% endif %}
-                        {% if journey.group_size %}
-                            <span class="flex items-center gap-1">
-                                👥 Up to {{ journey.group_size }} people
-                            </span>
-                        {% endif %}
-                    </div>
-                    
-                    <a href="{{ journey.url | relative_url }}" class="btn btn-primary w-full">
-                        View Journey Details
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        
-        {% if site.trips.size == 0 %}
-        <div class="text-center py-12">
-            <div class="text-6xl mb-4">🚐</div>
-            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Journeys Coming Soon</h3>
-            <p class="text-gray-600 mb-6">We're preparing amazing camper adventures for 2026!</p>
-            <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">
-                Get Notified When Bookings Open
-            </a>
+        {% else %}
+        <div
+          class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center"
+        >
+          <span class="text-4xl">{{ journey.emoji | default: "🚐" }}</span>
         </div>
         {% endif %}
-        
-        <div class="text-center mt-12">
-            <p class="text-gray-600 mb-6">Select a journey to see the full route, highlights and unique "DNA profile"</p>
-            <a href="{{ '/trips' | relative_url }}" class="btn btn-outline btn-lg">
-                View All Journeys
+
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl">{{ journey.emoji | default: "🚐" }}</span>
+            {% if journey.dates %}
+            <span class="text-sm text-gray-500">{{ journey.dates }}</span>
+            {% endif %}
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            <a
+              href="{{ journey.url | relative_url }}"
+              class="hover:text-primary-600 transition-colors"
+            >
+              {{ journey.title }}
             </a>
+          </h3>
+
+          {% if journey.excerpt %}
+          <p class="text-gray-600 mb-4 text-sm">
+            {{ journey.excerpt | strip_html | truncate: 120 }}
+          </p>
+          {% endif %}
+
+          <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+            {% if journey.duration %}
+            <span class="flex items-center gap-1"> ⏱️ {{ journey.duration }} </span>
+            {% endif %} {% if journey.group_size %}
+            <span class="flex items-center gap-1"> 👥 Up to {{ journey.group_size }} people </span>
+            {% endif %}
+          </div>
+
+          <a href="{{ journey.url | relative_url }}" class="btn btn-primary w-full">
+            View Journey Details
+          </a>
         </div>
+      </div>
+      {% endfor %}
     </div>
+
+    {% if site.trips.size == 0 %}
+    <div class="text-center py-12">
+      <div class="text-6xl mb-4">🚐</div>
+      <h3 class="text-2xl font-semibold text-gray-900 mb-2">Journeys Coming Soon</h3>
+      <p class="text-gray-600 mb-6">We're preparing amazing camper adventures for 2026!</p>
+      <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">
+        Get Notified When Bookings Open
+      </a>
+    </div>
+    {% endif %}
+
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6">
+        Select a journey to see the full route, highlights and unique "DNA profile"
+      </p>
+      <a href="{{ '/trips' | relative_url }}" class="btn btn-outline btn-lg"> View All Journeys </a>
+    </div>
+  </div>
 </section>
 
 <!-- What Makes Us Special Section -->
 <section id="about" class="py-16 bg-gray-50">
-    <div class="container-custom">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
-                Why Choose Our Camper Adventures?
-            </h2>
-            <p class="text-lg text-gray-600 mb-12">
-                Experience Bulgaria like a local with our expertly guided camper journeys
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">🗺️</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Local Guides</h3>
-                    <p class="text-gray-600">Our passionate guides share insider knowledge and hidden gems you won't find in guidebooks</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">�</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Comfortable Camper Travel</h3>
-                    <p class="text-gray-600">Modern, well-equipped campers provide comfort while maintaining that authentic adventure spirit</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">👥</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Small Groups</h3>
-                    <p class="text-gray-600">Maximum 10 travelers per journey ensures personalized attention and authentic connections</p>
-                </div>
-            </div>
+  <div class="container-custom">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+        Why Choose Our Camper Adventures?
+      </h2>
+      <p class="text-lg text-gray-600 mb-12">
+        Experience Bulgaria like a local with our expertly guided camper journeys
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl">🗺️</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Local Guides</h3>
+          <p class="text-gray-600">
+            Our passionate guides share insider knowledge and hidden gems you won't find in
+            guidebooks
+          </p>
         </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl">�</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Comfortable Camper Travel</h3>
+          <p class="text-gray-600">
+            Modern, well-equipped campers provide comfort while maintaining that authentic adventure
+            spirit
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <span class="text-2xl">👥</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Small Groups</h3>
+          <p class="text-gray-600">
+            Maximum 10 travelers per journey ensures personalized attention and authentic
+            connections
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Pricing Section -->
 <section id="pricing" class="py-16 bg-white">
-    <div class="container-custom">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-                Pricing & Availability
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                All journeys include accommodation, meals, expert guiding, and unique experiences
-            </p>
-        </div>
-        
-        <div class="max-w-3xl mx-auto text-center">
-            <div class="bg-gray-50 rounded-xl p-8 mb-8">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">2026 Season Pricing</h3>
-                <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">What's Included:</h4>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>✓ Expert local guide</li>
-                            <li>✓ Comfortable camper accommodation</li>
-                            <li>✓ All meals and beverages</li>
-                            <li>✓ Entrance fees and activities</li>
-                            <li>✓ Transportation throughout</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Booking Details:</h4>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>📅 8-9 day journeys</li>
-                            <li>👥 Groups of up to 10</li>
-                            <li>🌍 Sustainable travel practices</li>
-                            <li>📞 24/7 support during journey</li>
-                            <li>🎒 Detailed packing guides</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">
-                Request Pricing & Book Your Adventure
-            </a>
-        </div>
+  <div class="container-custom">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+        Pricing & Availability
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        All journeys include accommodation, meals, expert guiding, and unique experiences
+      </p>
     </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="bg-gray-50 rounded-xl p-8 mb-8">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">2026 Season Pricing</h3>
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">What's Included:</h4>
+            <ul class="text-gray-600 space-y-1">
+              <li>✓ Expert local guide</li>
+              <li>✓ Comfortable camper accommodation</li>
+              <li>✓ All meals and beverages</li>
+              <li>✓ Entrance fees and activities</li>
+              <li>✓ Transportation throughout</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Booking Details:</h4>
+            <ul class="text-gray-600 space-y-1">
+              <li>📅 8-9 day journeys</li>
+              <li>👥 Groups of up to 10</li>
+              <li>🌍 Sustainable travel practices</li>
+              <li>📞 24/7 support during journey</li>
+              <li>🎒 Detailed packing guides</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">
+        Request Pricing & Book Your Adventure
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- CTA Section -->
 <section class="py-16 bg-primary-600 text-white">
-    <div class="container-custom text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
-            Ready for Your Bulgarian Adventure?
-        </h2>
-        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Join us for an unforgettable journey through Bulgaria's most beautiful and culturally rich regions
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ '/trips' | relative_url }}" class="btn bg-white text-primary-600 hover:bg-gray-100 btn-lg">
-                Explore All Journeys
-            </a>
-            <a href="{{ '/contact' | relative_url }}" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600">
-                Get In Touch
-            </a>
-        </div>
+  <div class="container-custom text-center">
+    <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+      Ready for Your Bulgarian Adventure?
+    </h2>
+    <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+      Join us for an unforgettable journey through Bulgaria's most beautiful and culturally rich
+      regions
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="{{ '/trips' | relative_url }}"
+        class="btn bg-white text-primary-600 hover:bg-gray-100 btn-lg"
+      >
+        Explore All Journeys
+      </a>
+      <a
+        href="{{ '/contact' | relative_url }}"
+        class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600"
+      >
+        Get In Touch
+      </a>
     </div>
+  </div>
 </section>
