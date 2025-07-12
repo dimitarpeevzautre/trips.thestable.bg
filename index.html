@@ -32,9 +32,8 @@ culture, nature, and authentic experiences" cta_buttons='<a
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% assign featured_journeys = site.trips | where: "featured", true | limit: 6 %} {% if
-      featured_journeys.size == 0 %} {% assign featured_journeys = site.trips | limit: 6 %} {% endif
-      %} {% for journey in featured_journeys %}
+      {% assign all_journeys = site.trips | sort: "start_date" %}
+      {% for journey in all_journeys %}
       <div class="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
         {% if journey.featured_image %}
         <div class="h-48 bg-gray-300 overflow-hidden">
@@ -103,10 +102,9 @@ culture, nature, and authentic experiences" cta_buttons='<a
     {% endif %}
 
     <div class="text-center mt-12">
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-600">
         Select a journey to see the full route, highlights and unique "DNA profile"
       </p>
-      <a href="{{ '/trips' | relative_url }}" class="btn btn-outline btn-lg"> View All Journeys </a>
     </div>
   </div>
 </section>

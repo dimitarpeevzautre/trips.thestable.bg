@@ -1,10 +1,10 @@
 ---
 title: 'Rose Blossoms & Balkan Peaks'
 subtitle: "An immersion into Bulgaria's most famous celebration"
-featured: true
 featured_image: '/assets/images/trips/rose-blossoms.jpg'
 emoji: '🌹'
 dates: 'May 30 – June 7, 2026'
+start_date: 2026-05-30
 duration: '9 days'
 group_size: '10'
 theme: 'Cultural Festival & Natural Beauty'

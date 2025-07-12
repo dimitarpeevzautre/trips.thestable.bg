@@ -1,10 +1,10 @@
 ---
 title: 'Bulgarian Wines & Harvest Feasts'
 subtitle: "An epicurean journey through Bulgaria's wine regions"
-featured: true
 featured_image: '/assets/images/trips/wine-harvest.jpg'
 emoji: '🍇'
 dates: 'September 5 – September 13, 2026'
+start_date: 2026-09-05
 duration: '9 days'
 group_size: '10'
 theme: 'Wine Culture & Culinary Heritage'

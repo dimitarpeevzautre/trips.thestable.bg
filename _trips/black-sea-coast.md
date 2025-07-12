@@ -1,10 +1,10 @@
 ---
 title: 'See the Sea: A Black Sea Coastal Journey'
 subtitle: "Bulgaria's vibrant coast during the height of summer"
-featured: true
 featured_image: '/assets/images/trips/black-sea-coast.jpg'
 emoji: '🌊'
 dates: 'August 15 – August 23, 2026'
+start_date: 2026-08-15
 duration: '9 days'
 group_size: '10'
 theme: 'Coastal Culture & Maritime Heritage'

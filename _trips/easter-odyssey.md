@@ -1,10 +1,10 @@
 ---
 title: 'Unboxing Bulgaria: An Easter Odyssey'
 subtitle: 'A grand introduction to the heart of Bulgaria'
-featured: true
 featured_image: '/assets/images/trips/easter-odyssey.jpg'
 emoji: '🥚'
 dates: 'April 11 – April 19, 2026'
+start_date: 2026-04-11
 duration: '9 days'
 group_size: '10'
 theme: 'Cultural & Religious Heritage'

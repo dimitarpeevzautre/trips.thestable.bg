@@ -1,10 +1,10 @@
 ---
 title: 'Mountaintops & Glacial Lakes: Rila & Pirin Adventure'
 subtitle: "Trekking-focused adventure through Bulgaria's highest peaks"
-featured: true
 featured_image: '/assets/images/trips/rila-pirin.jpg'
 emoji: '🏔️'
-date: 'July 11 – July 19, 2026'
+dates: 'July 11 – July 19, 2026'
+start_date: 2026-07-11
 duration: '9 days'
 group_size: '10'
 theme: 'Mountain Adventure & Alpine Beauty'
