@@ -30,9 +30,7 @@ and culture through carefully planned camper journeys.
 
 ### 👥 **Small Group Experience**
 
-We believe adventures are better shared with like-minded travelers. Our camper
-groups are limited to 6-8 people maximum, ensuring personalized attention and
-genuine connections.
+We believe adventures are better shared with like-minded travelers. Our fleet of 10 campervans provides personalized attention and genuine connections for all our guided group adventures.
 
 ### � **Sustainable Travel**
 
@@ -86,7 +84,7 @@ management skills keep our adventures comfortable and worry-free.
 
 When you join a journey with The Stable, you can expect:
 
-- **Small group sizes** (maximum 6-8 people) for personalized attention and
+- **Fleet of 10 campervans** for personalized attention and
   authentic connections
 - **Professional guides** with extensive Bulgaria travel knowledge and cultural
   expertise

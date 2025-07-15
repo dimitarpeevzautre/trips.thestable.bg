@@ -10,7 +10,7 @@ flexibility.
    image="/assets/images/hero-camper.jpg"
    alt="Bulgarian camper adventure landscape"
    title="Guided Camper Adventures Through Bulgaria"
-   subtitle="Expert-led journeys for groups of up to 10"
+   subtitle="Guided group adventures with our fleet of 10 campervans"
    description="Discover Bulgaria's hidden gems through carefully curated adventures that blend culture, nature, and authentic experiences"
    cta_buttons='<a href="#journeys" class="btn btn-primary btn-lg">🚐 Explore Journeys</a><a href="#pricing" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-primary-600">💰 View Pricing</a>'
 %}

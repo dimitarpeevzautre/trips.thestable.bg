@@ -99,7 +99,7 @@ country's natural and spiritual beauty.
 ## Travel Style
 
 - **Comfortable camper-based travel** with modern amenities
-- **Small group experience** (maximum 10 travelers)
+- **Small group experience** with our fleet of 10 campervans
 - **Expert local guidance** throughout
 - **Flexible itinerary** allowing for spontaneous discoveries
 - **Cultural immersion** focus with authentic interactions
