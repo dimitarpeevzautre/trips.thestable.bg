@@ -70,7 +70,7 @@ Bulgaria, we're here to help.
                 </div>
                 <div>
                     <h4 class="font-semibold text-gray-900">Email</h4>
-                    <p class="text-gray-600">journeys@thestable.bg</p>
+                    <p class="text-gray-600">trips@thestable.bg</p>
                     <p class="text-sm text-gray-500">We respond within 24 hours</p>
                 </div>
             </div>
@@ -81,7 +81,7 @@ Bulgaria, we're here to help.
                 </div>
                 <div>
                     <h4 class="font-semibold text-gray-900">Phone</h4>
-                    <p class="text-gray-600">+359 XXX XXX XXX</p>
+                    <p class="text-gray-600"><a href="tel:+359888820589" class="hover:text-primary-600 transition-colors">+359888820589</a></p>
                     <p class="text-sm text-gray-500">Mon-Fri 9AM-6PM, Sat 10AM-4PM</p>
                 </div>
             </div>
@@ -92,7 +92,7 @@ Bulgaria, we're here to help.
                 </div>
                 <div>
                     <h4 class="font-semibold text-gray-900">Address</h4>
-                    <p class="text-gray-600">Sofia, Bulgaria</p>
+                    <p class="text-gray-600">bul. Cherni Vrah 84, Sofia, Bulgaria</p>
                     <p class="text-sm text-gray-500">Meeting point details provided upon booking</p>
                 </div>
             </div>
@@ -104,9 +104,8 @@ Bulgaria, we're here to help.
                 <div>
                     <h4 class="font-semibold text-gray-900">Social Media</h4>
                     <div class="flex gap-3 mt-2">
-                        <a href="#" class="text-gray-400 hover:text-primary-600 transition-colors">Facebook</a>
-                        <a href="#" class="text-gray-400 hover:text-primary-600 transition-colors">Instagram</a>
-                        <a href="#" class="text-gray-400 hover:text-primary-600 transition-colors">YouTube</a>
+                        <a href="https://www.facebook.com/thestablevans" class="text-gray-400 hover:text-primary-600 transition-colors">Facebook</a>
+                        <a href="https://www.instagram.com/thestablevans" class="text-gray-400 hover:text-primary-600 transition-colors">Instagram</a>
                     </div>
                     <p class="text-sm text-gray-500">Follow us for trip updates and photos</p>
                 </div>
@@ -119,7 +118,7 @@ Bulgaria, we're here to help.
                 During journeys, our guides carry GPS devices and maintain constant communication with our base.
             </p>
             <p class="text-sm text-gray-600">
-                <strong>24/7 Support Line:</strong> +359 XXX XXX XXX
+                <strong>24/7 Support Line:</strong> <a href="tel:+359888820589" class="hover:text-primary-600 transition-colors">+359888820589</a>
             </p>
         </div>
     </div>

@@ -66,21 +66,21 @@ Ivan grew up in the Rhodope Mountains and has been exploring Bulgaria's diverse
 regions by road for over a decade. He's a licensed tour guide with extensive
 experience in route planning and cultural interpretation.
 
-### Maria Georgieva - Cultural Specialist & Photographer
+### Dimitar Peev - Co-founder & Journey Experience Designer
 
-_Professional Photographer | Cultural Tourism Expert_
+_Adventure Travel Expert | Route Planning Specialist_
 
-Maria combines her passion for photography with deep knowledge of Bulgarian
-traditions, history, and local communities. She leads our cultural immersion
-experiences and captures the memories of your journey.
+Dimitar brings extensive experience in adventure travel and route planning to
+The Stable. His expertise in creating unforgettable camper experiences ensures
+every journey is perfectly balanced between adventure and comfort.
 
-### Georgi Nikolov - Operations & Logistics Manager
+### Stiliyana Gotovanska - Guest Relations & Cultural Guide
 
-_Logistics Coordinator | Fleet Manager_
+_Cultural Heritage Expert | Guest Experience Coordinator_
 
-Georgi ensures every journey runs smoothly, from camper maintenance to route
-logistics and accommodation bookings. His attention to detail and crisis
-management skills keep our adventures comfortable and worry-free.
+Stiliyana specializes in Bulgarian cultural heritage and guest relations. She
+ensures every traveler feels welcome and gains deep insights into Bulgarian
+traditions, cuisine, and local customs throughout their journey.
 
 ## Our Commitment to You
 
@@ -122,8 +122,8 @@ enthusiasts:
 
 Ready to start your Bulgarian adventure? We'd love to hear from you!
 
-**Address**: Sofia, Bulgaria **Email**: journeys@thestable.bg **Phone**: +359
-XXX XXX XXX
+**Address**: bul. Cherni Vrah 84, Sofia, Bulgaria **Email**: trips@thestable.bg
+**Phone**: [+359888820589](tel:+359888820589)
 
 **Office Hours**:
 
