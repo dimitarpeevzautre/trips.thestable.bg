@@ -13,15 +13,18 @@
     {% seo %}
 
     <!-- Google Analytics -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZJF48SWW2"></script>
+    <!-- Google tag (gtag.js) - async loading -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-4ZJF48SWW2");
+      gtag("config", "{{ site.google_analytics }}");
     </script>
 
     <!-- Favicon -->

@@ -14,52 +14,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Header transparency and parallax effect
   if (header && hero) {
+    const heroHeight = hero.offsetHeight;
+    const heroMedia = hero.querySelector('.hero-media');
+
+    // Cache DOM queries and class lists
+    const navLinks = header.querySelectorAll('a:not(.btn)');
+    const titleSpan = header.querySelector('span.text-xl');
+
     function updateHeader() {
       const scrollY = window.scrollY;
-      const heroHeight = hero.offsetHeight;
+      const isOverHero = scrollY < heroHeight - 100;
 
-      // Update header background based on scroll position
-      if (scrollY < heroHeight - 100) {
-        // Transparent header over hero
-        header.classList.remove('bg-white', 'shadow-sm');
-        header.classList.add('bg-transparent');
-        // Make text white when over hero
-        const links = header.querySelectorAll('a:not(.btn), span');
-        links.forEach(link => {
-          link.classList.remove('text-gray-700', 'text-gray-900');
-          link.classList.add('text-white');
-        });
-        // Update button hover states
-        const navLinks = header.querySelectorAll('a:not(.btn)');
-        navLinks.forEach(link => {
-          link.classList.remove('hover:text-primary-600');
-          link.classList.add('hover:text-blue-200');
-        });
-      } else {
-        // Solid white header
-        header.classList.remove('bg-transparent');
-        header.classList.add('bg-white', 'shadow-sm');
-        // Restore original text colors
-        const links = header.querySelectorAll('a:not(.btn), span');
-        links.forEach(link => {
-          link.classList.remove('text-white');
-          link.classList.add('text-gray-700');
-        });
-        const titleSpan = header.querySelector('span.text-xl');
-        if (titleSpan) {
-          titleSpan.classList.remove('text-white');
-          titleSpan.classList.add('text-gray-900');
-        }
-        // Restore button hover states
-        const navLinks = header.querySelectorAll('a:not(.btn)');
-        navLinks.forEach(link => {
-          link.classList.remove('hover:text-blue-200');
-          link.classList.add('hover:text-primary-600');
-        });
+      // Update header background and text colors
+      header.classList.toggle('bg-transparent', isOverHero);
+      header.classList.toggle('bg-white', !isOverHero);
+      header.classList.toggle('shadow-sm', !isOverHero);
+
+      // Update link colors
+      navLinks.forEach(link => {
+        link.classList.toggle('text-white', isOverHero);
+        link.classList.toggle('text-gray-700', !isOverHero);
+        link.classList.toggle('hover:text-blue-200', isOverHero);
+        link.classList.toggle('hover:text-primary-600', !isOverHero);
+      });
+
+      // Update title span color
+      if (titleSpan) {
+        titleSpan.classList.toggle('text-white', isOverHero);
+        titleSpan.classList.toggle('text-gray-900', !isOverHero);
       }
 
-      // Parallax effect for hero
-      const heroMedia = hero.querySelector('.hero-media');
+      // Parallax effect for hero (only if still visible)
       if (heroMedia && scrollY < heroHeight) {
         const parallaxSpeed = 0.5;
         const yPos = scrollY * parallaxSpeed;
@@ -68,26 +53,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initial header state - transparent over hero
-    header.classList.add('bg-transparent');
-    const links = header.querySelectorAll('a:not(.btn), span');
-    links.forEach(link => {
-      link.classList.add('text-white');
-    });
+    updateHeader();
 
-    // Update on scroll
-    window.addEventListener('scroll', updateHeader);
-    updateHeader(); // Initial call
+    // Use throttled scroll handler for better performance
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          updateHeader();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
   }
 
-  // Hero image zoom animation
+  // Hero image loading animation
   const heroImages = document.querySelectorAll('.hero-image');
   heroImages.forEach(img => {
-    if (img.complete) {
+    function handleImageLoad() {
       img.classList.add('loaded');
+    }
+
+    if (img.complete) {
+      handleImageLoad();
     } else {
-      img.addEventListener('load', function () {
-        this.classList.add('loaded');
-      });
+      img.addEventListener('load', handleImageLoad);
     }
   });
 
@@ -105,16 +96,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Form submission handling (you can replace this with your actual form handler)
+  // Form submission handling
   const contactForm = document.querySelector('form[action="#"]');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
       // Basic form validation
-      const name = this.querySelector('#name').value;
-      const email = this.querySelector('#email').value;
-      const message = this.querySelector('#message').value;
+      const name = this.querySelector('#name')?.value;
+      const email = this.querySelector('#email')?.value;
+      const message = this.querySelector('#message')?.value;
 
       if (!name || !email || !message) {
         alert('Please fill in all required fields.');
@@ -129,30 +120,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Add loading animation for images
+  // Optimized image loading
   const images = document.querySelectorAll('img');
   images.forEach(img => {
-    img.addEventListener('load', function () {
-      this.classList.add('loaded');
-    });
+    function handleImageLoad() {
+      img.classList.add('loaded');
+    }
+
+    if (img.complete) {
+      handleImageLoad();
+    } else {
+      img.addEventListener('load', handleImageLoad);
+    }
   });
 });
 
-// Utility function for lazy loading images (optional enhancement)
+// Utility function for lazy loading images
 function observeImages() {
   const images = document.querySelectorAll('img[data-src]');
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove('lazy');
-        imageObserver.unobserve(img);
-      }
-    });
-  });
 
-  images.forEach(img => imageObserver.observe(img));
+  if ('IntersectionObserver' in window && images.length > 0) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+  }
 }
 
 // Initialize lazy loading if supported
