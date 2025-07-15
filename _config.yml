@@ -1,8 +1,8 @@
 # Site settings
 title: "The Stable - Camper Adventures"
 description: "Guided camper adventures through Bulgaria - Expert-led journeys for groups of up to 10"
-baseurl: "/trips.thestable.bg"
-url: "https://dimitarpeevzautre.github.io"
+baseurl: ""
+url: "https://trips.thestable.bg"
 
 # Logo settings
 logo: "assets/images/logo/logo.svg"
