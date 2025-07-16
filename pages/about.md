@@ -34,7 +34,7 @@ We believe adventures are better shared with like-minded travelers. Our fleet of
 10 campervans provides personalized attention and genuine connections for all
 our guided group adventures.
 
-### � **Sustainable Travel**
+### 🌍 **Sustainable Travel**
 
 We're committed to responsible tourism that supports local communities and
 preserves Bulgaria's natural beauty. Our routes prioritize local businesses and
