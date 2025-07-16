@@ -10,6 +10,17 @@ logo: "assets/images/logo/logo.svg"
 # Analytics
 google_analytics: G-4ZJF48SWW2
 
+# Contact Information
+contact:
+  email: trips@thestable.bg
+  phone: "+359888820589"
+  address: "bul. Cherni Vrah 84, Sofia, Bulgaria"
+
+# Social Media
+social:
+  facebook: "https://www.facebook.com/thestablevans"
+  instagram: "https://www.instagram.com/thestablevans"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

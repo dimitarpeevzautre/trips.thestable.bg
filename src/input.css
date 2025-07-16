@@ -20,6 +20,12 @@
 }
 
 @layer components {
+  /* 
+   * Custom Component Classes
+   * These classes provide consistent styling for common UI elements
+   * to reduce code duplication and improve maintainability
+   */
+
   .btn {
     @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
   }
@@ -79,16 +85,48 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Social Media Icons */
+  .social-icon {
+    @apply w-5 h-5 text-gray-400 hover:text-white transition-colors;
+  }
+
+  /* Contact Info */
+  .contact-item {
+    @apply flex items-center gap-2 text-gray-300;
+  }
+
+  .contact-link {
+    @apply hover:text-white transition-colors;
+  }
+
+  /* Image optimization utilities */
+  .img-lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .img-lazy.loaded {
+    opacity: 1;
+  }
+
+  .img-placeholder {
+    background-color: #f3f4f6;
+    background-image: url("data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M50 10c-22.091 0-40 17.909-40 40s17.909 40 40 40 40-17.909 40-40-17.909-40-40-40zm0 70c-16.569 0-30-13.431-30-30s13.431-30 30-30 30 13.431 30 30-13.431 30-30 30z' fill='%23cbd5e0'/%3e%3cpath d='M50 35c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15zm0 24c-4.962 0-9-4.038-9-9s4.038-9 9-9 9 4.038 9 9-4.038 9-9 9z' fill='%23cbd5e0'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 60px;
+  }
+
   /* Aspect ratio utilities */
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
-  
+
   /* Trip card styles */
   .trip-card {
     @apply relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300;
   }
-  
+
   .trip-card:hover {
     @apply shadow-xl;
     transform: translateY(-8px);
