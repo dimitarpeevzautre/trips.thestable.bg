@@ -2,20 +2,19 @@
 layout: default
 ---
 
+<!-- Hero Section -->
+{% include hero.html 
+  image=page.featured_image
+  video=page.hero_video
+  alt=page.title
+  title=page.title
+  subtitle=page.subtitle
+%}
+
 <div class="container-custom py-8">
   <article class="max-w-6xl mx-auto">
     <!-- Journey Header -->
     <header class="mb-8">
-      {% if page.featured_image %}
-      <div class="w-full h-96 bg-gray-300 rounded-xl overflow-hidden mb-6">
-        <img
-          src="{{ page.featured_image | relative_url }}"
-          alt="{{ page.title }}"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      {% endif %}
-
       <div class="flex flex-wrap items-center gap-4 mb-4">
         {% if page.emoji %}
         <span class="text-3xl">{{ page.emoji }}</span>
@@ -45,11 +44,6 @@ layout: default
         </span>
         {% endif %}
       </div>
-
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
-      {% if page.subtitle %}
-      <p class="text-xl text-gray-600 mb-6">{{ page.subtitle }}</p>
-      {% endif %}
 
       <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600">
         {% if page.season %}
