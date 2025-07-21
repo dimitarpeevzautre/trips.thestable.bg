@@ -1,0 +1,125 @@
+<!-- Floating Trip Info Component -->
+<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block">
+  <div class="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-2xl p-4 max-w-sm">
+    <!-- Trip Details -->
+    <div class="flex items-center justify-between mb-4 space-x-4">
+      <!-- Dates -->
+      {% if page.dates %}
+      <div class="flex items-center space-x-2 text-sm">
+        <svg class="w-4 h-4 text-gray-600" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+          <path d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-semibold text-gray-800">
+          {% assign date_parts = page.dates | split: ' – ' %}
+          {% if date_parts.size > 1 %}
+            {% assign start_date = date_parts[0] | split: ' ' %}
+            {% assign end_date = date_parts[1] | split: ' ' %}
+            {% if start_date[0] and end_date[0] %}
+              {{ start_date[0] }} {{ start_date[1] }}
+            {% else %}
+              {{ page.dates }}
+            {% endif %}
+          {% else %}
+            {{ page.dates }}
+          {% endif %}
+        </span>
+      </div>
+      {% endif %}
+
+      <!-- Group Size -->
+      {% if page.group_size %}
+      <div class="flex items-center space-x-2 text-sm">
+        <svg class="w-4 h-4 text-gray-600" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+          <path d="M5 20v-1a7 7 0 017-7v0a7 7 0 017 7v1M12 12a4 4 0 100-8 4 4 0 000 8z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-semibold text-gray-800">{{ page.group_size }} vans</span>
+      </div>
+      {% endif %}
+
+      <!-- Duration -->
+      {% if page.duration %}
+      <div class="flex items-center space-x-2 text-sm">
+        <svg class="w-4 h-4 text-gray-600" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+          <path d="M4 21.4V2.6a.6.6 0 01.6-.6h11.652a.6.6 0 01.424.176l3.148 3.148A.6.6 0 0120 5.75V21.4a.6.6 0 01-.6.6H4.6a.6.6 0 01-.6-.6z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 5.4V2.354a.354.354 0 01.604-.25l3.292 3.292a.353.353 0 01-.25.604H16.6a.6.6 0 01-.6-.6z" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 10h8M8 18h8M8 14h4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-semibold text-gray-800">{{ page.duration }}</span>
+      </div>
+      {% endif %}
+
+      <!-- Price -->
+      {% if page.price %}
+      <div class="flex items-center space-x-2 text-sm">
+        <svg class="w-4 h-4 text-gray-600" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 8.5c-.685-.685-1.891-1.161-3-1.191M9 15c.644.86 1.843 1.35 3 1.391m0-9.082c-1.32-.036-2.5.561-2.5 2.191 0 3 5.5 1.5 5.5 4.5 0 1.711-1.464 2.446-3 2.391m0-9.082V5.5m0 10.891V18.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-semibold text-gray-800">{{ page.price }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Available Seats Badge and CTA -->
+    <div class="flex items-center justify-between space-x-3">
+      <!-- Remaining Seats Badge -->
+      {% if page.remaining_seats %}
+      <div class="bg-yellow-400 text-black px-3 py-1.5 rounded-full flex items-center space-x-1">
+        <span class="font-bold text-xs">{{ page.remaining_seats }}</span>
+        <span class="text-xs font-semibold">Vans left</span>
+      </div>
+      {% endif %}
+
+      <!-- CTA Button -->
+      <a 
+        href="{{ '/contact' | relative_url }}?journey={{ page.title | url_encode }}"
+        class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors duration-300 flex-1 text-center"
+      >
+        Sign Up
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile version of floating info -->
+<div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
+  <div class="bg-white border-t border-gray-200 p-4">
+    <div class="flex items-center justify-between space-x-4">
+      <!-- Quick Info -->
+      <div class="flex-1">
+        <div class="flex items-center space-x-4 text-xs text-gray-600 mb-2">
+          {% if page.dates %}
+          <span class="flex items-center space-x-1">
+            <svg class="w-3 h-3" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+              <path d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ page.duration }}</span>
+          </span>
+          {% endif %}
+          {% if page.group_size %}
+          <span class="flex items-center space-x-1">
+            <svg class="w-3 h-3" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+              <path d="M5 20v-1a7 7 0 017-7v0a7 7 0 017 7v1M12 12a4 4 0 100-8 4 4 0 000 8z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ page.group_size }} vans</span>
+          </span>
+          {% endif %}
+          {% if page.price %}
+          <span class="font-semibold text-gray-800">{{ page.price }}</span>
+          {% endif %}
+        </div>
+        {% if page.remaining_seats %}
+        <div class="text-xs text-yellow-600 font-medium">{{ page.remaining_seats }} seats left</div>
+        {% endif %}
+      </div>
+
+      <!-- CTA Button -->
+      <a 
+        href="{{ '/contact' | relative_url }}?journey={{ page.title | url_encode }}"
+        class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors duration-300"
+      >
+        Sign Up
+      </a>
+    </div>
+  </div>
+</div>

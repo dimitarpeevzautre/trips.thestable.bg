@@ -8,6 +8,7 @@ start_date: 2026-04-11
 duration: '9 days'
 group_size: '10'
 remaining_seats: 3
+price: '2,500 eur'
 theme: 'Cultural & Religious Heritage'
 season: 'Spring'
 includes:
