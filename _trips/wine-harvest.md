@@ -28,6 +28,34 @@ highlights:
 excerpt:
   "A journey for the epicurean, this tour uncorks the rich flavors of Bulgaria's
   burgeoning wine scene during the magical harvest season."
+program:
+  - day: 1
+    title: "Sofia → Plovdiv"
+    description: "Easy afternoon drive on A1 motorway to Plovdiv (145 km, 1.5-2 hours). Settle into campsite, enjoy evening exploring city's vibrant cultural scene, perhaps dinner in artistic Kapana district setting stage for culinary journey ahead. Overnight: Glamping & Motel Alliance - reliable, well-equipped starting point."
+  - day: 2
+    title: "Heart of Thracian Valley"
+    description: "Unification Day national holiday. Dedicated to exploring Thracian Valley wineries renowned for powerful red wines, particularly indigenous Mavrud grape. Visit pre-selected wineries like organic Zagreus Winery or acclaimed Bessa Valley for tours and tastings. Harvest season offers opportunities witnessing grapes being brought in and processed. Overnight: Permission-based Thracian Valley winery stay."
+  - day: 3
+    title: "Thracian Valley → Batak"
+    description: "Morning visit to another local winery like Villa Yustina (100 km, 2 hours). Drive southwest climbing into Rhodope Mountains foothills. Destination: scenic Batak Reservoir offering scenery change from vineyards to pine forests and mountains. Overnight: Eco Camping Batak - beautiful lakeside location perfect for relaxing with purchased wines."
+  - day: 4
+    title: "Batak → Leshten/Kovachevitsa"
+    description: "Unique travel experience: ride Bulgaria's last remaining narrow-gauge railway (90 km, 2.5 hours). Drive to Velingrad catching train for scenic mountain journey toward Dobrinishte. After returning, drive to architectural reserves Leshten and Kovachevitsa for afternoon exploring timeless stone-roofed houses. Overnight: Guesthouse with parking, Leshten."
+  - day: 5
+    title: "Leshten → Melnik"
+    description: "Travel to second major wine destination: Melnik region - Bulgaria's warmest part, home to unique indigenous Shiroka Melnik (Broad-Leaved Melnik Vine) grape (70 km, 1.5 hours). Drive directly to host winery for multi-night stay. Afternoon visit tiny Melnik town - explore Kordopulova House with vast wine cellar, walk amongst surreal Melnik sand pyramids. Overnight: Villa Melnik Winery."
+  - day: 6
+    title: "Day at the Winery"
+    description: "Full day dedicated to host winery. Comprehensive Villa Melnik tour from vineyards to impressive underground cellars tunneled into sandy hill. Guided tasting showcasing wine range highlighting local varieties. Complement with vineyard walks and traditional Bulgarian dinner/barbecue organized by winery. Overnight: Villa Melnik Winery with stunning hilltop 360-degree views."
+  - day: 7
+    title: "Melnik & Rozhen Monastery"
+    description: "Short drive to Rozhen Monastery - one of Bulgaria's best-preserved medieval monasteries noted for beautiful stained-glass windows and miraculous Virgin Mary icon. Afternoon free for winery relaxation, revisiting Melnik town, or purchasing wines for home. Overnight: Villa Melnik Winery."
+  - day: 8
+    title: "Melnik → Rila Monastery"
+    description: "Begin journey north with final significant stop at Rila Monastery (120 km, 2 hours). Experience spiritual monument in different, quieter season than Easter tour. Farewell dinner organized at nearby restaurant allowing group reflection on epicurean journey. Overnight: Camping Bor - rustic campsite providing fittingly serene natural final night."
+  - day: 9
+    title: "Rila Monastery → Sofia"
+    description: "Final morning in Rila Mountains tranquility, then straightforward drive back to Sofia (120 km, 2 hours), concluding wine and harvest tour."
 ---
 
 ## The Journey

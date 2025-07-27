@@ -29,6 +29,34 @@ excerpt:
   'This tour is a deep dive into the world of the ancient Thracians, a
   civilization that flourished in Bulgaria and left behind incredible treasures
   and mysteries.'
+program:
+  - day: 1
+    title: "Sofia → Plovdiv via Starosel"
+    description: "Depart eastward on A1/E80 Trakia motorway (180 km, 2.5-3 hours). First stop: Thracian Cult Complex at Starosel - massive temple-tomb, largest of its kind in Balkans. Continue to Plovdiv, one of Europe's oldest continuously inhabited cities. Overnight: Glamping & Motel Alliance, Plovdiv."
+  - day: 2
+    title: "Exploring Plovdiv"
+    description: "Full day exploring rich historical layers. Guided tour through cobbled Old Town streets, beautifully restored Revival-era houses. Visit stunningly preserved Roman Theatre (still used for performances), ancient Roman Stadium beneath pedestrian street, vibrant bohemian Kapana district with craft shops, cafes, galleries. Overnight: Glamping & Motel Alliance."
+  - day: 3
+    title: "Plovdiv → Valley of Thracian Rulers"
+    description: "Head north to famed valley dense with Thracian burial mounds (100 km, 2 hours). Main highlight: UNESCO World Heritage Thracian Tomb of Kazanlak. Visit exact replica showcasing breathtaking artistry (original sealed for protection). Include nearby Museum of Roses. Overnight: Alba Camping, Skobelevo - heart of valley."
+  - day: 4
+    title: "Kazanlak & Shipka Pass"
+    description: "Further valley exploration. Visit Golyama Kosmatka Tomb - burial place of great Thracian king Seuthes III (visitors can enter actual tomb structure). Scenic drive up Balkan Mountains to Shipka Memorial Church - stunning gold-domed Russian Orthodox church commemorating Russo-Turkish War 1877-78. Overnight: Alba Camping."
+  - day: 5
+    title: "Kazanlak → Haskovo"
+    description: "Travel south to Haskovo (100 km, 1.5 hours). Visit Thracian Tomb of Alexandrovo (discovered 2000) famous for unique vivid hunting scene frescoes. Adjacent Museum of Thracian Art in Eastern Rhodopes features exact tomb replica and beautifully curated Thracian artifacts. Overnight: Alexandrovo Camping, Haskovo."
+  - day: 6
+    title: "Ancient Rock City of Perperikon"
+    description: "Dedicated to Bulgaria's most extraordinary archaeological site (120 km, 2.5 hours). Perperikon - carved from massive rocky hill in Eastern Rhodopes, served as fortress, palace, sanctuary for millennia. Believed location of long-lost Temple of Dionysus. Explore acropolis, palace-sanctuary, rock-hewn streets. Overnight: Camping Arda, near Kardzhali."
+  - day: 7
+    title: "Kardzhali → Trigrad Gorge"
+    description: "Journey deeper into Rhodope Mountains (90 km, 2.5-3 hours). Stop at Stone Mushrooms near Beli Plast - unique erosion-sculpted rock formations. Spectacular scenic drive through dramatic Rhodope landscapes to Trigrad Gorge - narrow canyon with towering marble cliffs. Overnight: Permission-based guesthouse parking, Trigrad."
+  - day: 8
+    title: "Trigrad Gorge → Batak Reservoir"
+    description: "Morning exploring gorge wonders. Visit impressive Devil's Throat Cave where massive underground river plunges 42 meters (steeped in Orpheus and Eurydice mythology). Nearby Yagodinska Cave - one of Bulgaria's longest and most beautiful. Afternoon drive to picturesque Batak Reservoir (60 km, 1.5 hours). Overnight: Eco Camping Batak."
+  - day: 9
+    title: "Batak Reservoir → Sofia"
+    description: "Day of Bulgarian Education and Culture/Slavonic Alphabet - major national holiday celebrating Cyrillic script creation. Relaxed morning by lake, then return journey to Sofia (140 km, 2-2.5 hours). Notice festive atmosphere in towns celebrating. Tour concludes at Aleksander Nevski Cathedral."
 ---
 
 ## The Journey

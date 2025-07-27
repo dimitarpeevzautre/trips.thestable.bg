@@ -29,6 +29,34 @@ excerpt:
   "This journey is an immersion into the sights and scents of Bulgaria's most
   famous celebration: the Kazanlak Rose Festival and the magical world of
   Bulgarian rose oil."
+program:
+  - day: 1
+    title: "Sofia → Veliko Tarnovo"
+    description: "Direct drive to Bulgaria's magnificent medieval capital via A2 and E772 roads (220 km, 3 hours). Afternoon first exploration, walk along Yantra River, dinner with view of illuminated Tsarevets Fortress. Overnight: Camping Veliko Tarnovo - British-owned with 45-50 spacious pitches, swimming pool, excellent facilities."
+  - day: 2
+    title: "Veliko Tarnovo & Arbanasi"
+    description: "Explore historical riches. Morning at Tsarevets Fortress walking ancient walls, visiting Patriarchal Cathedral. Afternoon short drive to Arbanasi architectural reserve - historic village with fortified houses and richly decorated churches like Church of the Nativity, showcasing 17th-18th century Bulgarian merchant wealth. Overnight: Camping Veliko Tarnovo."
+  - day: 3
+    title: "Veliko Tarnovo → Shipka Pass via Gabrovo"
+    description: "Travel south into Balkan Mountains heart (70 km, 1.5-2 hours). Visit Etara Architectural-Ethnographic Complex - unique open-air museum recreating 19th-century Bulgarian village. Artisans use traditional water-powered machinery in authentic workshops. Climb historic Shipka Pass (Russo-Turkish War site). Overnight: Permission-based scenic location near pass."
+  - day: 4
+    title: "Shipka Pass → Kazanlak via Buzludzha"
+    description: "Short drive to Bulgaria's most surreal landmark: Buzludzha Monument (30 km, 1 hour). Massive concrete \"flying saucer\" built by communist regime. While officially closed, exterior offers breathtaking brutalist architecture spectacle. Descend into Rose Valley, check into campsite near Kazanlak. Overnight: Camping Kalvacha with thermal mineral water showers."
+  - day: 5
+    title: "Heart of Rose Valley"
+    description: "Deeper immersion into rose industry. Visit Damascena Ethnographic and Rose Distillery Complex - comprehensive look at rose oil production history/technology in beautiful rose gardens. Afternoon relaxing by nearby Koprinka Dam. Overnight: Camping Kalvacha, perfectly positioned for festival."
+  - day: 6
+    title: "Day Trip to Karlovo"
+    description: "Day trip to Rose Valley's west end (110 km round trip). Visit Karlovo - birthplace of national hero Vasil Levski. Explore charming old town, visit Vasil Levski National Museum. Karlovo hosts own rose celebrations, providing different regional perspective before main Kazanlak festivities. Overnight: Camping Kalvacha."
+  - day: 7
+    title: "Kazanlak Rose Festival Begins"
+    description: "Festival atmosphere builds to peak. Explore city, visit main square bustling with markets selling rose products - perfumes, oils, jams, liqueurs. Evening opening folklore concerts on main stage with vibrant traditional Bulgarian music and dance. Overnight: Camping Kalvacha."
+  - day: 8
+    title: "Rose Picking Ritual"
+    description: "Highlight experience! Early start (by 9 am) to designated rose field in village like Enina or Kran. Participate in authentic rose-picking ritual gathering fragrant petals alongside locals in traditional costumes with live folklore music - truly magical sensory experience. Afternoon visit UNESCO-listed Thracian Tomb of Kazanlak. Overnight: Camping Kalvacha."
+  - day: 9
+    title: "Grand Parade & Return to Sofia"
+    description: "Final day coincides with Rose Festival culmination. Drive into Kazanlak for main carnival parade (begins noon). Vibrant procession with thousands - school children, folklore groups, newly crowned Queen Rose parading down main street. After parade (concludes ~1:30 pm), festive lunch then drive to Sofia (200 km, 3-3.5 hours) filled with unforgettable sights and scents."
 ---
 
 ## The Journey
