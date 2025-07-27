@@ -28,6 +28,106 @@ highlights:
 excerpt:
   "This tour is a celebration of Bulgaria's vibrant Black Sea coast during the
   height of summer, combining beach relaxation with rich maritime heritage."
+program:
+  - day: 1
+    title: "Arrival & Coastal Welcome"
+    location: "Burgas"
+    description: "Welcome to Bulgaria's Black Sea coast! Meet your group and settle into our coastal camper base near Burgas. Evening orientation and welcome dinner featuring fresh seafood at a traditional seaside taverna."
+    activities:
+      - "Group welcome and introductions"
+      - "Camper setup and coastal orientation" 
+      - "Welcome dinner with traditional seafood"
+      - "Evening stroll along Burgas Bay"
+    accommodation: "Coastal camping near Burgas"
+    image: "/assets/images/trips/black-sea/day1-burgas-welcome.jpg"
+  - day: 2
+    title: "Nessebar Ancient Town"
+    location: "Nessebar"
+    description: "Explore the UNESCO World Heritage ancient city of Nessebar, built on a romantic peninsula. Discover 2,500 years of maritime history through Greek and Roman ruins, medieval churches, and traditional architecture."
+    activities:
+      - "UNESCO Nessebar Old Town guided tour"
+      - "Ancient ruins and medieval churches visit"
+      - "Traditional craft workshop"
+      - "Peninsula coastal walk"
+    accommodation: "Beachside camping near Nessebar"
+    image: "/assets/images/trips/black-sea/day2-nessebar-ancient.jpg"
+  - day: 3
+    title: "Beach Paradise & Boat Excursion"
+    location: "Sunny Beach - Sozopol"
+    description: "Experience Bulgaria's golden beaches and crystal waters. Take a boat excursion along the dramatic coastline with stops at secluded beaches and explore the charming artist colony of Sozopol."
+    activities:
+      - "Morning beach relaxation and swimming"
+      - "Boat excursion along the coast"
+      - "Sozopol old town exploration"
+      - "Sunset photography from clifftops"
+    accommodation: "Seaside camping near Sozopol"
+    image: "/assets/images/trips/black-sea/day3-boat-excursion.jpg"
+  - day: 4
+    title: "Traditional Fishing Culture"
+    location: "Fishing Villages"
+    description: "Join local fishermen for an authentic morning fishing expedition. Visit traditional fishing villages where ancient maritime traditions continue, from fish auctions to net-mending rituals."
+    activities:
+      - "Early morning fishing expedition"
+      - "Traditional fish auction participation"
+      - "Fishing village cultural immersion"
+      - "Fresh catch cooking workshop"
+    accommodation: "Traditional guesthouse in fishing village"
+    image: "/assets/images/trips/black-sea/day4-fishing-tradition.jpg"
+  - day: 5
+    title: "Archaeological Coastal Wonders"
+    location: "Ancient Coastal Sites"
+    description: "Discover ancient Greek and Roman ruins along the coast. Visit archaeological sites that reveal the rich history of Black Sea colonization and maritime trade routes."
+    activities:
+      - "Ancient Greek ruins exploration"
+      - "Archaeological site guided tours"
+      - "Roman coastal fortifications"
+      - "Historical interpretation workshop"
+    accommodation: "Coastal camping near archaeological sites"
+    image: "/assets/images/trips/black-sea/day5-archaeology.jpg"
+  - day: 6
+    title: "Summer Festival Magic"
+    location: "Coastal Towns"
+    description: "Experience Bulgaria's vibrant summer coastal culture with beach festivals, seaside concerts, and the infectious energy of Bulgarian summer traditions."
+    activities:
+      - "Beach festival participation"
+      - "Traditional music and dance"
+      - "Local artisan markets"
+      - "Coastal celebration evening"
+    accommodation: "Festival area camping"
+    image: "/assets/images/trips/black-sea/day6-festival-magic.jpg"
+  - day: 7
+    title: "Hidden Coves & Sea Caves"
+    location: "Sinemorets Area"
+    description: "Explore pristine hidden beaches near the Turkish border. Discover dramatic sea caves and enjoy the untouched natural beauty of Bulgaria's southern coast."
+    activities:
+      - "Hidden cove exploration"
+      - "Sea cave boat tours"
+      - "Nature photography workshop"
+      - "Secluded beach picnic"
+    accommodation: "Wild camping near Sinemorets"
+    image: "/assets/images/trips/black-sea/day7-hidden-coves.jpg"
+  - day: 8
+    title: "Coastal Cuisine & Relaxation"
+    location: "Traditional Tavernas"
+    description: "Savor the finest Black Sea cuisine featuring fresh seafood, traditional coastal dishes, and local wines. Relax on pristine beaches and enjoy the gentle rhythm of coastal life."
+    activities:
+      - "Traditional cooking workshop"
+      - "Seafood and wine tasting"
+      - "Beach relaxation time"
+      - "Farewell dinner preparation"
+    accommodation: "Beachside camping"
+    image: "/assets/images/trips/black-sea/day8-coastal-cuisine.jpg"
+  - day: 9
+    title: "Farewell & Departure"
+    location: "Burgas"
+    description: "Final morning along the beautiful Black Sea coast. Group reflections, farewell breakfast, and departure with unforgettable memories of Bulgaria's maritime heritage."
+    activities:
+      - "Final coastal morning walk"
+      - "Group reflection and sharing"
+      - "Farewell breakfast"
+      - "Departure arrangements"
+    accommodation: "Check-out and departure"
+    image: "/assets/images/trips/black-sea/day9-farewell.jpg"
 ---
 
 ## The Journey
