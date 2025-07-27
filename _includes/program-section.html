@@ -1,0 +1,273 @@
+{% if page.program and page.program.size > 0 %}
+<section class="bg-gray-50 py-16" id="program-section">
+  <div class="container-custom">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Journey Program</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Follow our carefully crafted itinerary designed to showcase the best of {{ page.title | remove: 'See the Sea: A ' | remove: 'Mountaintops & Glacial Lakes: ' | remove: 'Unboxing Bulgaria: An ' | remove: 'Bulgarian Wines & ' }}.
+        </p>
+      </div>
+
+      <!-- Desktop Layout: 2 Columns -->
+      <div class="hidden lg:block">
+        <div class="grid lg:grid-cols-12 gap-8">
+          <!-- Day Counter Sidebar -->
+          <div class="lg:col-span-2">
+            <div class="sticky top-8">
+              <div class="space-y-2" id="day-counter">
+                {% for day_item in page.program %}
+                <button 
+                  class="day-counter-btn w-full text-left p-3 rounded-lg transition-all duration-300 group"
+                  data-day="{{ day_item.day }}"
+                  onclick="scrollToDay({{ day_item.day }})"
+                >
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center text-sm font-medium transition-all duration-300 group-hover:border-primary-500">
+                      {{ day_item.day }}
+                    </div>
+                    <div class="hidden xl:block">
+                      <div class="text-sm font-medium text-gray-900 group-hover:text-primary-600">Day {{ day_item.day }}</div>
+                      <div class="text-xs text-gray-500">{{ day_item.location }}</div>
+                    </div>
+                  </div>
+                </button>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Program Content -->
+          <div class="lg:col-span-10">
+            <div class="space-y-8">
+              {% for day_item in page.program %}
+              <div class="program-day bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300" 
+                   id="day-{{ day_item.day }}" 
+                   data-day="{{ day_item.day }}">
+                <div class="grid lg:grid-cols-2 gap-6 p-6">
+                  <!-- Day Content -->
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3 mb-4">
+                      <div class="w-10 h-10 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold">
+                        {{ day_item.day }}
+                      </div>
+                      <div>
+                        <h3 class="text-xl font-bold text-gray-900">{{ day_item.title }}</h3>
+                        <p class="text-sm text-gray-500">📍 {{ day_item.location }}</p>
+                      </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed">{{ day_item.description }}</p>
+                    
+                    {% if day_item.activities and day_item.activities.size > 0 %}
+                    <div>
+                      <h4 class="font-semibold text-gray-900 mb-2">Activities</h4>
+                      <ul class="space-y-1">
+                        {% for activity in day_item.activities %}
+                        <li class="flex items-start gap-2 text-sm text-gray-600">
+                          <span class="text-primary-500 mt-1">•</span>
+                          <span>{{ activity }}</span>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    {% endif %}
+                    
+                    {% if day_item.accommodation %}
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span class="text-gray-400">🏕️</span>
+                      <span><strong>Accommodation:</strong> {{ day_item.accommodation }}</span>
+                    </div>
+                    {% endif %}
+                  </div>
+
+                  <!-- Day Image -->
+                  <div class="relative">
+                    {% if day_item.image %}
+                    <img 
+                      src="{{ day_item.image | relative_url }}" 
+                      alt="{{ day_item.title }}"
+                      class="w-full h-64 object-cover rounded-lg"
+                      loading="lazy"
+                    >
+                    {% else %}
+                    <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                      <span class="text-gray-400 text-sm">Day {{ day_item.day }} Image</span>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Layout: Collapsible Days -->
+      <div class="lg:hidden">
+        <div class="space-y-4" id="mobile-program">
+          {% for day_item in page.program %}
+          <div class="bg-white rounded-xl shadow-sm">
+            <button 
+              class="w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-xl"
+              onclick="toggleMobileDay({{ day_item.day }})"
+              aria-expanded="false"
+              aria-controls="mobile-day-{{ day_item.day }}"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold">
+                    {{ day_item.day }}
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900">{{ day_item.title }}</h3>
+                    <p class="text-sm text-gray-500">📍 {{ day_item.location }}</p>
+                  </div>
+                </div>
+                <div class="mobile-day-chevron transition-transform duration-200">
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            
+            <div 
+              id="mobile-day-{{ day_item.day }}" 
+              class="mobile-day-content hidden px-4 pb-4"
+            >
+              <div class="space-y-4 pt-4 border-t border-gray-100">
+                {% if day_item.image %}
+                <img 
+                  src="{{ day_item.image | relative_url }}" 
+                  alt="{{ day_item.title }}"
+                  class="w-full h-48 object-cover rounded-lg"
+                  loading="lazy"
+                >
+                {% endif %}
+                
+                <p class="text-gray-700 leading-relaxed">{{ day_item.description }}</p>
+                
+                {% if day_item.activities and day_item.activities.size > 0 %}
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">Activities</h4>
+                  <ul class="space-y-1">
+                    {% for activity in day_item.activities %}
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <span class="text-primary-500 mt-1">•</span>
+                      <span>{{ activity }}</span>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+                
+                {% if day_item.accommodation %}
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-gray-400">🏕️</span>
+                  <span><strong>Accommodation:</strong> {{ day_item.accommodation }}</span>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Desktop scroll-based day activation
+function initializeProgramSection() {
+  if (window.innerWidth >= 1024) { // lg breakpoint
+    const dayCounterButtons = document.querySelectorAll('.day-counter-btn');
+    const programDays = document.querySelectorAll('.program-day');
+    
+    function updateActiveDay() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const triggerPoint = scrollTop + windowHeight * 0.3;
+      
+      let activeDay = 1;
+      
+      programDays.forEach((day, index) => {
+        const dayTop = day.offsetTop;
+        const dayBottom = dayTop + day.offsetHeight;
+        
+        if (triggerPoint >= dayTop && triggerPoint <= dayBottom) {
+          activeDay = parseInt(day.dataset.day);
+        }
+      });
+      
+      // Update active states
+      dayCounterButtons.forEach(btn => {
+        const dayNum = parseInt(btn.dataset.day);
+        const circle = btn.querySelector('div > div');
+        const text = btn.querySelector('div > div:last-child div:first-child');
+        
+        if (dayNum === activeDay) {
+          circle.classList.remove('border-gray-300');
+          circle.classList.add('border-primary-500', 'bg-primary-500', 'text-white');
+          if (text) {
+            text.classList.remove('text-gray-900');
+            text.classList.add('text-primary-600');
+          }
+        } else {
+          circle.classList.add('border-gray-300');
+          circle.classList.remove('border-primary-500', 'bg-primary-500', 'text-white');
+          if (text) {
+            text.classList.add('text-gray-900');
+            text.classList.remove('text-primary-600');
+          }
+        }
+      });
+    }
+    
+    // Initialize and listen for scroll
+    updateActiveDay();
+    window.addEventListener('scroll', updateActiveDay);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        updateActiveDay();
+      }
+    });
+  }
+}
+
+// Scroll to specific day
+function scrollToDay(dayNumber) {
+  const dayElement = document.getElementById(`day-${dayNumber}`);
+  if (dayElement) {
+    const offsetTop = dayElement.offsetTop - 100; // Account for sticky header
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Mobile collapsible functionality
+function toggleMobileDay(dayNumber) {
+  const content = document.getElementById(`mobile-day-${dayNumber}`);
+  const button = content.previousElementSibling;
+  const chevron = button.querySelector('.mobile-day-chevron');
+  
+  if (content.classList.contains('hidden')) {
+    content.classList.remove('hidden');
+    button.setAttribute('aria-expanded', 'true');
+    chevron.classList.add('rotate-180');
+  } else {
+    content.classList.add('hidden');
+    button.setAttribute('aria-expanded', 'false');
+    chevron.classList.remove('rotate-180');
+  }
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', initializeProgramSection);
+</script>
+{% endif %}
