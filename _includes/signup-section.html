@@ -1,0 +1,193 @@
+<!-- Signup Section -->
+<section id="signup-section" class="py-16 bg-white">
+  <div class="container-custom">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Ready to Join This Adventure?</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Secure your spot on this unforgettable journey through Bulgaria. Limited spaces available.
+        </p>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Left Side: Tally Form -->
+        <div class="bg-gray-50 rounded-xl p-8">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Book Your Spot</h3>
+            <p class="text-gray-600">Fill out the form below to secure your place</p>
+          </div>
+          
+          <!-- Embedded Tally Form -->
+          <div class="bg-white rounded-lg">
+            <iframe 
+              data-tally-src="https://tally.so/embed/mRq649?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height="500" 
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0" 
+              title="Trip Booking Form"
+              class="rounded-lg">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Right Side: Trip Details -->
+        <div class="space-y-6">
+          <!-- Pricing and Availability -->
+          <div class="bg-primary-50 rounded-xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">Trip Information</h3>
+              {% if page.remaining_seats %}
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-yellow-400 text-black">
+                {{ page.remaining_seats }} spots left
+              </span>
+              {% endif %}
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              {% if page.dates %}
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">📅 Dates:</span>
+                <span class="font-medium">{{ page.dates }}</span>
+              </div>
+              {% endif %}
+              {% if page.duration %}
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">⏱️ Duration:</span>
+                <span class="font-medium">{{ page.duration }}</span>
+              </div>
+              {% endif %}
+              {% if page.group_size %}
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">👥 Group Size:</span>
+                <span class="font-medium">{{ page.group_size }} vans</span>
+              </div>
+              {% endif %}
+              {% if page.price %}
+              <div class="flex items-center gap-2">
+                <span class="text-gray-500">💰 Price:</span>
+                <span class="font-bold text-lg text-primary-600">{{ page.price }}</span>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- What's Included -->
+          {% if page.includes %}
+          <div class="bg-green-50 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span class="text-green-600">✅</span>
+              What's Included
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              {% for item in page.includes %}
+              <li class="flex items-start gap-2">
+                <span class="text-green-600 mt-0.5 text-xs">✓</span>
+                <span>{{ item }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- What's Not Included -->
+          <div class="bg-red-50 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <span class="text-red-600">❌</span>
+              What's Not Included
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-red-600 mt-0.5 text-xs">✗</span>
+                <span>Personal travel insurance</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-600 mt-0.5 text-xs">✗</span>
+                <span>International flights to/from Bulgaria</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-600 mt-0.5 text-xs">✗</span>
+                <span>Personal expenses and souvenirs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-600 mt-0.5 text-xs">✗</span>
+                <span>Optional activities outside the itinerary</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-600 mt-0.5 text-xs">✗</span>
+                <span>Alcoholic beverages (unless specified)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="bg-blue-50 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Need More Information?</h3>
+            <p class="text-sm text-gray-600 mb-3">
+              Have questions about this journey? Our team is here to help you plan the perfect adventure.
+            </p>
+            <a 
+              href="{{ '/contact' | relative_url }}" 
+              class="btn btn-outline-primary w-full text-center"
+            >
+              Contact Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tally Embed Script -->
+<script>
+  var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+</script>
+
+<!-- JavaScript to hide floating signup when this section is visible -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the floating signup elements
+  const floatingDesktop = document.querySelector('.fixed.bottom-6.left-1\\/2');
+  const floatingMobile = document.querySelector('.fixed.bottom-0.left-0.right-0.lg\\:hidden');
+  const signupSection = document.getElementById('signup-section');
+  
+  if (!signupSection) return;
+  
+  // Create intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Hide floating elements when signup section is visible
+        if (floatingDesktop) {
+          floatingDesktop.style.opacity = '0';
+          floatingDesktop.style.pointerEvents = 'none';
+        }
+        if (floatingMobile) {
+          floatingMobile.style.opacity = '0';
+          floatingMobile.style.pointerEvents = 'none';
+        }
+      } else {
+        // Show floating elements when signup section is not visible
+        if (floatingDesktop) {
+          floatingDesktop.style.opacity = '1';
+          floatingDesktop.style.pointerEvents = 'auto';
+        }
+        if (floatingMobile) {
+          floatingMobile.style.opacity = '1';
+          floatingMobile.style.pointerEvents = 'auto';
+        }
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '-50px 0px -50px 0px'
+  });
+  
+  observer.observe(signupSection);
+});
+</script>
