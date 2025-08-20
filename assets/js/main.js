@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Header transparency and parallax effect
   if (header && hero) {
     const heroHeight = hero.offsetHeight;
-    const heroMedia = hero.querySelector('.hero-media');
+    // Apply parallax to a wrapper so image zoom transform doesn't get overridden
+    const heroParallax = hero.querySelector('.hero-parallax');
 
     // Cache DOM queries and class lists
     const navLinks = header.querySelectorAll('a:not(.btn)');
@@ -45,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Parallax effect for hero (only if still visible)
-      if (heroMedia && scrollY < heroHeight) {
+      if (heroParallax && scrollY < heroHeight) {
         const parallaxSpeed = 0.5;
         const yPos = scrollY * parallaxSpeed;
-        heroMedia.style.transform = `translateY(${yPos}px)`;
+        heroParallax.style.transform = `translateY(${yPos}px)`;
       }
     }
 
@@ -73,6 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
   heroImages.forEach(img => {
     function handleImageLoad() {
       img.classList.add('loaded');
+      // Slow, slightly off-center zoom after load
+      img.style.transition = 'transform 15s ease';
+      img.style.transformOrigin = '52% 48%'; // a bit off center
+      img.style.transform = 'scale(1)';
+      setTimeout(() => {
+        img.style.transform = 'scale(1.08)';
+      }, 80);
     }
 
     if (img.complete) {
